@@ -38,7 +38,7 @@ lapply(c('xfun'), function(pkg) {
 # Go Blue! {-}
 
 
-![](images/woodson.png)
+![](images/woodson.png){-}
 
 > Until I build a cover image for this book, Woodson's Giant Leap will have to suffice.
 
