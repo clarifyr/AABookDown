@@ -1,6 +1,6 @@
 # About the Author {-}
 
-Sanjeev Kumar is part of the Technology and Operations faculty at the Ross School of Business, Univ. of Michigan. 
+Sanjeev Kumar is part of the Technology and Operations faculty at the Ross School of Business, Univ. of Michigan, Ann Arbor. 
 
 ![](images/SanjeevKumar.jpg) {-}
 
