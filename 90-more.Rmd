@@ -2,8 +2,12 @@
 
 # (APPENDIX) Appendix {-}
 
-# More to Say
+# Syllabi
 
-Yeah! I have finished my book, but I have more to say about some topics. Let me explain them in this appendix.
+This appendix will have the syllabus for the relevant Ross courses.
 
-To know more about **bookdown**, see https://bookdown.org.
+## TO404 Big Data Manipulation and Visualization
+
+## TO414 Advanced Analytics
+
+## TO628 Advanced Big Data Analytics

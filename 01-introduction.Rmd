@@ -7,7 +7,12 @@ output:
 
 # Introduction
 
-Now unplug your Internet cable, and start doing some serious work.
+
+
+
+## Archive - Delete
+
+This section holds the placeholder information that will be deleted after the book is built.
 
 We have a nice figure in Figure \@ref(fig:hello), and also a table in Table \@ref(tab:iris).
 
@@ -23,4 +28,3 @@ knitr::kable(
 )
 ```
 
-More chapters to come in `02-foo.Rmd`, `03-bar`.Rmd, ...

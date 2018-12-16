@@ -34,21 +34,18 @@ lapply(c('xfun'), function(pkg) {
 })
 ```
 
-# Preface {-}
+# What Is This? {-}
 
-Hi there, this is my great book.
+This book accompanies Big Data Analytics courses taught by Sanjeev Kumar at Ross School of Business, Univ. of Michigan.
 
-## Why read this book {-}
-
-It is very important...
 
 ## Structure of the book {-}
 
-Chapters \@ref(introduction) introduces a new topic, and ...
+Add structure information for the book here.
 
 ## Software information and conventions {-}
 
-I used the **knitr**\index{knitr} package [@xie2015] and the **bookdown**\index{bookdown} package [@R-bookdown] to compile my book. My R session information is shown below:
+This book is built using the **knitr**\index{knitr} package [@xie2015] and the **bookdown**\index{bookdown} package [@R-bookdown]. Following is the R session information that built the current version:
 
 ```{r}
 xfun::session_info()
@@ -58,10 +55,10 @@ Package names are in bold text (e.g., **rmarkdown**), and inline code and filena
 
 ## Acknowledgments {-}
 
-A lot of people helped me when I was writing the book.
+Add acknowledgements here.
 
 ```{block2, type='flushright', html.tag='p'}
-Frida Gomam  
-on the Mars
+Sanjeev Kumar  
+Technology and Operations, Ross School of Business, Univ. of Michigan
 ```
 
