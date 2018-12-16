@@ -2,5 +2,5 @@
 
 Sanjeev Kumar is part of the Technology and Operations faculty at the Ross School of Business, Univ. of Michigan, Ann Arbor. 
 
-![](images/SanjeevKumar.jpg) {-}
+![](images/SanjeevKumar.jpg){width=250px} {-}
 

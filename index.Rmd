@@ -34,6 +34,14 @@ lapply(c('xfun'), function(pkg) {
 })
 ```
 
+
+# Go Blue! {-}
+
+
+![](images/woodson.png)
+
+> Until I build a cover image for this book, Woodson's Giant Leap will have to suffice.
+
 # Preface {-}
 
 We live in a world awash in data. Companies are increasingly turning to data analytics to
