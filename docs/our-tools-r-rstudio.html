@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Advanced Big Data Analytics for Business with R</title>
+  <meta name="description" content="A book to support Big Data classes by Sanjeev Kumar at Ross School of Business, Univ of Michigan.">
+  <meta name="generator" content="bookdown 0.5 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Advanced Big Data Analytics for Business with R" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="A book to support Big Data classes by Sanjeev Kumar at Ross School of Business, Univ of Michigan." />
+  <meta name="github-repo" content="ateachr/ABDA4BwR" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Advanced Big Data Analytics for Business with R" />
+  
+  <meta name="twitter:description" content="A book to support Big Data classes by Sanjeev Kumar at Ross School of Business, Univ of Michigan." />
+  
+
+<meta name="author" content="Sanjeev Kumar">
+
+
+<meta name="date" content="2018-12-16">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="advanced-big-data-analytics.html">
+<link rel="next" href="syllabi.html">
+<script src="libs/jquery/jquery.min.js"></script>
+<link href="libs/gitbook/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="css/style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./index.html">Advanced Big Data Analytics</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#who-is-this-book-for"><i class="fa fa-check"></i>Who Is This Book For?</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#about-this-document"><i class="fa fa-check"></i>About This Document</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#how-is-this-book-structured"><i class="fa fa-check"></i>How is This Book Structured</a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#part-i-getting-started"><i class="fa fa-check"></i>Part I: Getting Started</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#part-ii-data-exploration-and-visualization"><i class="fa fa-check"></i>Part II: Data Exploration and Visualization</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#part-iii-traditional-statistical-modeling"><i class="fa fa-check"></i>Part III: Traditional Statistical Modeling</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#part-iv-machine-learning-and-predictive-analytics"><i class="fa fa-check"></i>Part IV: Machine Learning and Predictive Analytics</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#part-v-putting-it-all-together"><i class="fa fa-check"></i>Part V: Putting It All Together</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#part-vi-appendices-bibliography-and-index"><i class="fa fa-check"></i>Part VI: Appendices, Bibliography and Index</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#how-to-read-this-book"><i class="fa fa-check"></i>How to Read This Book</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#is-this-book-suitable-for-you"><i class="fa fa-check"></i>Is This Book Suitable For You?</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#acknowledgments"><i class="fa fa-check"></i>Acknowledgments</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="about-the-author.html"><a href="about-the-author.html"><i class="fa fa-check"></i>About the Author</a></li>
+<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a><ul>
+<li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html#archive---delete"><i class="fa fa-check"></i><b>1.1</b> Archive - Delete</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="advanced-big-data-analytics.html"><a href="advanced-big-data-analytics.html"><i class="fa fa-check"></i><b>2</b> Advanced Big Data Analytics</a></li>
+<li class="chapter" data-level="3" data-path="our-tools-r-rstudio.html"><a href="our-tools-r-rstudio.html"><i class="fa fa-check"></i><b>3</b> Our Tools: R, RStudio</a><ul>
+<li class="chapter" data-level="3.1" data-path="our-tools-r-rstudio.html"><a href="our-tools-r-rstudio.html#introduction-to-r-and-rstudio"><i class="fa fa-check"></i><b>3.1</b> Introduction to R and RStudio</a><ul>
+<li class="chapter" data-level="3.1.1" data-path="our-tools-r-rstudio.html"><a href="our-tools-r-rstudio.html#download-and-install-r-and-rstudio"><i class="fa fa-check"></i><b>3.1.1</b> Download and Install R and RStudio</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="our-tools-r-rstudio.html"><a href="our-tools-r-rstudio.html#useful-features-of-rstudio"><i class="fa fa-check"></i><b>3.2</b> Useful Features of RStudio</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="our-tools-r-rstudio.html"><a href="our-tools-r-rstudio.html#console"><i class="fa fa-check"></i><b>3.2.1</b> Console</a></li>
+<li class="chapter" data-level="3.2.2" data-path="our-tools-r-rstudio.html"><a href="our-tools-r-rstudio.html#editor"><i class="fa fa-check"></i><b>3.2.2</b> Editor</a></li>
+<li class="chapter" data-level="3.2.3" data-path="our-tools-r-rstudio.html"><a href="our-tools-r-rstudio.html#environment"><i class="fa fa-check"></i><b>3.2.3</b> Environment</a></li>
+<li class="chapter" data-level="3.2.4" data-path="our-tools-r-rstudio.html"><a href="our-tools-r-rstudio.html#history"><i class="fa fa-check"></i><b>3.2.4</b> History</a></li>
+<li class="chapter" data-level="3.2.5" data-path="our-tools-r-rstudio.html"><a href="our-tools-r-rstudio.html#files"><i class="fa fa-check"></i><b>3.2.5</b> Files</a></li>
+<li class="chapter" data-level="3.2.6" data-path="our-tools-r-rstudio.html"><a href="our-tools-r-rstudio.html#plots"><i class="fa fa-check"></i><b>3.2.6</b> Plots</a></li>
+<li class="chapter" data-level="3.2.7" data-path="our-tools-r-rstudio.html"><a href="our-tools-r-rstudio.html#packages"><i class="fa fa-check"></i><b>3.2.7</b> Packages</a></li>
+<li class="chapter" data-level="3.2.8" data-path="our-tools-r-rstudio.html"><a href="our-tools-r-rstudio.html#help"><i class="fa fa-check"></i><b>3.2.8</b> Help</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="our-tools-r-rstudio.html"><a href="our-tools-r-rstudio.html#helpful-menu-items-and-keyboard-shortcuts"><i class="fa fa-check"></i><b>3.3</b> Helpful Menu Items and Keyboard Shortcuts</a></li>
+<li class="chapter" data-level="3.4" data-path="our-tools-r-rstudio.html"><a href="our-tools-r-rstudio.html#essential-r-tips-and-tricks"><i class="fa fa-check"></i><b>3.4</b> Essential R Tips and Tricks</a><ul>
+<li class="chapter" data-level="3.4.1" data-path="our-tools-r-rstudio.html"><a href="our-tools-r-rstudio.html#r-is-case-specific-and-space-neutral"><i class="fa fa-check"></i><b>3.4.1</b> R is Case Specific and Space Neutral</a></li>
+<li><a href="our-tools-r-rstudio.html#comments-and-line-continuation"><span class="toc-section-number">3.4.2</span> Comments and Line Continuation}<br />
+</a></li>
+<li class="chapter" data-level="3.4.3" data-path="our-tools-r-rstudio.html"><a href="our-tools-r-rstudio.html#naming-conventions"><i class="fa fa-check"></i><b>3.4.3</b> Naming Conventions</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="our-tools-r-rstudio.html"><a href="our-tools-r-rstudio.html#rmarkdown-rmd-files"><i class="fa fa-check"></i><b>3.5</b> RMarkdown (RMD) Files</a></li>
+<li class="chapter" data-level="3.6" data-path="our-tools-r-rstudio.html"><a href="our-tools-r-rstudio.html#embedding-r-code-blocks-in-rmd-files"><i class="fa fa-check"></i><b>3.6</b> Embedding R Code Blocks in RMD Files</a><ul>
+<li class="chapter" data-level="3.6.1" data-path="our-tools-r-rstudio.html"><a href="our-tools-r-rstudio.html#embedding-options"><i class="fa fa-check"></i><b>3.6.1</b> Embedding Options</a></li>
+<li class="chapter" data-level="3.6.2" data-path="our-tools-r-rstudio.html"><a href="our-tools-r-rstudio.html#embedding-code-blocks-of-other-languages"><i class="fa fa-check"></i><b>3.6.2</b> Embedding Code Blocks of Other Languages</a></li>
+<li class="chapter" data-level="3.6.3" data-path="our-tools-r-rstudio.html"><a href="our-tools-r-rstudio.html#embedding-in-line-r-code"><i class="fa fa-check"></i><b>3.6.3</b> Embedding in-line R Code</a></li>
+<li class="chapter" data-level="3.6.4" data-path="our-tools-r-rstudio.html"><a href="our-tools-r-rstudio.html#reproducibility-of-data-analysis"><i class="fa fa-check"></i><b>3.6.4</b> Reproducibility of Data Analysis</a></li>
+</ul></li>
+<li class="chapter" data-level="3.7" data-path="our-tools-r-rstudio.html"><a href="our-tools-r-rstudio.html#key-features-of-rrstudio-ecosystem"><i class="fa fa-check"></i><b>3.7</b> Key Features of R/RStudio Ecosystem</a><ul>
+<li class="chapter" data-level="3.7.1" data-path="our-tools-r-rstudio.html"><a href="our-tools-r-rstudio.html#open-source-software"><i class="fa fa-check"></i><b>3.7.1</b> Open Source Software</a></li>
+<li class="chapter" data-level="3.7.2" data-path="our-tools-r-rstudio.html"><a href="our-tools-r-rstudio.html#extensability-of-r"><i class="fa fa-check"></i><b>3.7.2</b> Extensability of R</a></li>
+<li class="chapter" data-level="3.7.3" data-path="our-tools-r-rstudio.html"><a href="our-tools-r-rstudio.html#usability-of-r"><i class="fa fa-check"></i><b>3.7.3</b> Usability of R</a></li>
+<li class="chapter" data-level="3.7.4" data-path="our-tools-r-rstudio.html"><a href="our-tools-r-rstudio.html#r-is-not-verbose"><i class="fa fa-check"></i><b>3.7.4</b> R is NOT Verbose</a></li>
+<li class="chapter" data-level="3.7.5" data-path="our-tools-r-rstudio.html"><a href="our-tools-r-rstudio.html#object-oriented-programming"><i class="fa fa-check"></i><b>3.7.5</b> Object Oriented Programming</a></li>
+<li class="chapter" data-level="3.7.6" data-path="our-tools-r-rstudio.html"><a href="our-tools-r-rstudio.html#r-communitys-sense-of-humor"><i class="fa fa-check"></i><b>3.7.6</b> R Community’s Sense of Humor</a></li>
+</ul></li>
+<li class="chapter" data-level="3.8" data-path="our-tools-r-rstudio.html"><a href="our-tools-r-rstudio.html#common-issues-pitfalls-bugs-obstacles-and-their-solutions"><i class="fa fa-check"></i><b>3.8</b> Common Issues, Pitfalls, Bugs, Obstacles and Their Solutions</a><ul>
+<li class="chapter" data-level="3.8.1" data-path="our-tools-r-rstudio.html"><a href="our-tools-r-rstudio.html#i-have-an-older-r-installtion.-how-do-i-upgrade-it"><i class="fa fa-check"></i><b>3.8.1</b> I have an older R installtion. How do I upgrade it?</a></li>
+<li class="chapter" data-level="3.8.2" data-path="our-tools-r-rstudio.html"><a href="our-tools-r-rstudio.html#help---i-am-not-being-able-to-install-any-packages"><i class="fa fa-check"></i><b>3.8.2</b> Help - I am not being able to install any packages!</a></li>
+<li class="chapter" data-level="3.8.3" data-path="our-tools-r-rstudio.html"><a href="our-tools-r-rstudio.html#why-is-the-edit-command-not-working-for-me"><i class="fa fa-check"></i><b>3.8.3</b> Why is the edit command not working for me?</a></li>
+</ul></li>
+</ul></li>
+<li class="appendix"><span><b>Appendix</b></span></li>
+<li class="chapter" data-level="A" data-path="syllabi.html"><a href="syllabi.html"><i class="fa fa-check"></i><b>A</b> Syllabi</a><ul>
+<li class="chapter" data-level="A.1" data-path="syllabi.html"><a href="syllabi.html#to404-big-data-manipulation-and-visualization"><i class="fa fa-check"></i><b>A.1</b> TO404 Big Data Manipulation and Visualization</a></li>
+<li class="chapter" data-level="A.2" data-path="syllabi.html"><a href="syllabi.html#to414-advanced-analytics"><i class="fa fa-check"></i><b>A.2</b> TO414 Advanced Analytics</a></li>
+<li class="chapter" data-level="A.3" data-path="syllabi.html"><a href="syllabi.html#to628-advanced-big-data-analytics"><i class="fa fa-check"></i><b>A.3</b> TO628 Advanced Big Data Analytics</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://bookdown.org" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Advanced Big Data Analytics for Business with R</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="our-tools-r-rstudio" class="section level1">
+<h1><span class="header-section-number">Chapter 3</span> Our Tools: R, RStudio</h1>
+<p>R is awesome. R is also considered pretty difficult to learn. In my opinion, that’s not true. In this chapter, we will quickly get out feet wet in the shallow end of the R pool - ready to jump off the deep end in the succeeding chapters.</p>
+<div id="introduction-to-r-and-rstudio" class="section level2">
+<h2><span class="header-section-number">3.1</span> Introduction to R and RStudio</h2>
+<p>For the purpose of this course, R is a Statistical Computing Environment. It provides us with an underlying computer language, analysis tools and software platform for us to work with data. While R is pretty powerful, it is built by geeks for geeks. As a result, it lacks the user-friendliness needed by beginners and casual users. To help mitigate this problem, we do not directly interface with R and instead use the user friendly RStudio software as a wrapper around R. RStudio is often considered an IDE (Integrated Development Environment) for R.</p>
+<p>For the record, R is a pretty awful name for anything - try googling “R” and see how relevant the search results are! It is called R after the first name of the two authors of R: Robert and Ross. The name kinda makes sense when you consider that R is based on another programming language named S.</p>
+<div id="download-and-install-r-and-rstudio" class="section level3">
+<h3><span class="header-section-number">3.1.1</span> Download and Install R and RStudio</h3>
+<p>R can be downloaded from any of the mirror sites maintained by the Comprehensive R Archive Network (“CRAN”). I recommend the CRAN Mirror maintained by RStudio: <a href="https://cran.rstudio.com/" class="uri">https://cran.rstudio.com/</a>. Here you will find links to download R for Windows, Mac-OS and Linux. The current version of R available for Windows is R 3.4.3 and measures at around 70MB. Follow the directions to install the starting packages for R - often called “Base R”.</p>
+<p>Even though we will not use a bare R installtion - lets take a look at it anyway. Launch R once the installation finishes. It will look similar to the figure below. This window is called the R Console. As you would note - it looks a little scary - no icons, nothing clickable, no menu even. While it is possible for us to do everything we wish to do with R just with the R Console, it really would be nice to make our experience with R a little more user friendly. Lucky for us, we have RStudio to pick up the slack here.</p>
+<div class="figure">
+<img src="images/rbase.png" alt="Staring Window of Base R Installation" />
+<p class="caption">Staring Window of Base R Installation</p>
+</div>
+<p>Once you have finished installing R, you can download and install RStudio from: <a href="https://www.rstudio.com/products/rstudio/download/" class="uri">https://www.rstudio.com/products/rstudio/download/</a>. There again are installers available for Windows, Mac-OS and Linux. After you are done installing RStudio, you should launch RStudio to check that everything is installed and connected properly. When you launch RStudio for the first time, you will see something similar to the figure below.</p>
+<div class="figure">
+<img src="images/rstudio.png" alt="Staring Window of RStudio" />
+<p class="caption">Staring Window of RStudio</p>
+</div>
+<p>The larger part of the RStudio window is same as the R Console and this is in-fact R running inside RStudio. When we launched R independently, this is the prompt that you we got. RStudio combines this direct access to R with other useful elements. In the bottom right, you have access to the file system, you can manage R packages (more about them later), read Help documentation and see various plots and charts that you will soon be building. In the top right, RStudio provides you with details of current R environment and a history of your recent R commands. If you are using Git repository for your files then you will see Git tab here.</p>
+<p>Now that we have both R and RStudio set up, it is time for us to get started in making some use of it. Note that the R environment is used primarily by typing commands on the Console prompt or running commands saved in a file - typically a R Script file or a RMarkdown file. While RStudio provides GUI elements for many common tasks, we will emphasize corresponding command line versions which usually provide better control and flexibility compared to their GUI counterparts.</p>
+</div>
+</div>
+<div id="useful-features-of-rstudio" class="section level2">
+<h2><span class="header-section-number">3.2</span> Useful Features of RStudio</h2>
+<div id="console" class="section level3">
+<h3><span class="header-section-number">3.2.1</span> Console</h3>
+<p>The console is where you can interact directly with the R system. You can write one line at a time and immediately execute it there by pressing enter. If you wish to write more than one command in one line then you can separate the commands using the semi-colon character. The console is essentially an R session running inside RStudio. The console shows a command prompt (usually the <code>&gt;</code>}) character to indicate that you can type there. You can change the prompt by changing the options setting.<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a></p>
+</div>
+<div id="editor" class="section level3">
+<h3><span class="header-section-number">3.2.2</span> Editor</h3>
+<p>The editor is where you can work on and edit all of your files. This is a pure text editor - so no formatting of any kind. You will mostly be working with RMD files here. The tab panel at the top of the editor allows you to work on multiple files at once. The editor window is hidden when you start RStudio as you usually don’t have a file to edit when you begin. Once you create/open a new file then they will open in the editor window and you can edit them. The editor window helpfully shows you the line numbers in left column and the cursor positioning in the line at the bottom left corner. The bottom right corner shows you the file type that you are working on. There are usual icons for saving a file, finding, spell check etc on the top bar. See Figure:  for an example.</p>
+<div class="figure">
+<img src="images/editor.png" alt="RStudio Editor Window" />
+<p class="caption">RStudio Editor Window</p>
+</div>
+</div>
+<div id="environment" class="section level3">
+<h3><span class="header-section-number">3.2.3</span> Environment</h3>
+<p>The Environment tab shows you all of the variables currently stored in memory and what their values are.We haven’t said what variables are as yet. Hold on - its coming in the next chapter. The tab in fact shows all the objects that currently exist in your R session. Objects will be discussed very soon, later in this chapter. Environment tab is a very useful place to have a quick look at the state of your current R session. The environment tab has a handy broom icon for deleting all the objects that exist and clearning your environment. You can, of course, do that using a command as well - <strong><code>rm</code></strong> for remove or delete. The command <strong><code>ls</code></strong> generates a list of all the objects in the environment. We can combine the two to delete every object in the environment if we so choose:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">rm</span>(<span class="dt">list =</span> <span class="kw">ls</span>()) <span class="co">#Delete every object in the environment</span></code></pre></div>
+</div>
+<div id="history" class="section level3">
+<h3><span class="header-section-number">3.2.4</span> History</h3>
+<p>The History tab shows you the history of all the commands you have entered in the Console window. You can use available icons on top to search through the history or delete items from the history. Two very useful icons are for transferring commands to the console and to the source. See details in figure below. . The <code>To Console</code> option allows you to select one or more commands from the history and transfers them to the Console window where you can run them by pressing Enter. The <code>To Source</code> option sends the selected commands to the Editor window, to the currently open and active file.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># %![History Window](images/history.png)</span></code></pre></div>
+</div>
+<div id="files" class="section level3">
+<h3><span class="header-section-number">3.2.5</span> Files</h3>
+<p>The Files tab allows you to navigate through your filesystem, making it easy to load files into Rstudio. It shows the content of the current working directory when RStudio starts. You can navigate through the file system of your machine using the available options. The top icons provide ability to create a new folder, delete selected files, rename selected files and refresh file listings. The <code>More</code> option reveals further functionalities including two useful ones: the ability to set the currently displayed directory as the working directory and the ability to get the Files tab to display the contents of the current working directory. Figure: shows the options.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># %![Files Window](images/files.png)</span></code></pre></div>
+</div>
+<div id="plots" class="section level3">
+<h3><span class="header-section-number">3.2.6</span> Plots</h3>
+<p>the Plots tab shows the plots generated by the commands typed in the Console. See figure show the plot generated by the <code>plot(cars)</code> command in the Plots tab. As you can see, you can use options to zoom in/out and export the plot image as an image file or a PDF document. Plots made by R plots are Vector graphics and hence should be saved in vector formats like PNG and not bitmap formats like JPG.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># %![Plots Window with a Demo Plot](images/plots.png)</span></code></pre></div>
+</div>
+<div id="packages" class="section level3">
+<h3><span class="header-section-number">3.2.7</span> Packages</h3>
+<p>The Packages tab shows you a list of all the packages installed on your system and their version number. You can check the checkbox next to the package name to manually load packages during your R session. You will also find icons for installing and updating packages. A search icon allows for searching among installed packages.</p>
+</div>
+<div id="help" class="section level3">
+<h3><span class="header-section-number">3.2.8</span> Help</h3>
+<p>As the name suggests, the Help tab can be used to find Help documentation on specific keywords. You can search for a keyword in the search field for looking at corresponding help documentation. If you write a help command in the console, then the output of that will also show in the Help tab. For example, if you type the command below (looking for help on “help”), you will get the help documentation as shown in figure below.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">help</span>(<span class="st">&quot;help&quot;</span>)
+<span class="co"># %![Help Window when looking for help on &quot;help&quot;](images/help.png)</span></code></pre></div>
+</div>
+</div>
+<div id="helpful-menu-items-and-keyboard-shortcuts" class="section level2">
+<h2><span class="header-section-number">3.3</span> Helpful Menu Items and Keyboard Shortcuts</h2>
+</div>
+<div id="essential-r-tips-and-tricks" class="section level2">
+<h2><span class="header-section-number">3.4</span> Essential R Tips and Tricks</h2>
+<div id="r-is-case-specific-and-space-neutral" class="section level3">
+<h3><span class="header-section-number">3.4.1</span> R is Case Specific and Space Neutral</h3>
+<p>Everything in R is case specific. In R, upper case letters are considered completely different than their lower case counterparts. R will show no mercy if you mistype something in a difference case. However, R is pretty flexible about spaces and will usually accept multiple (or none) spaces where the default expectation is one space.</p>
+</div>
+<div id="comments-and-line-continuation" class="section level3">
+<h3><span class="header-section-number">3.4.2</span> Comments and Line Continuation}<br />
+</h3>
+<p>You can add your comments/remarks in your R code by inserting the <code>#</code> character. Any text after the <code>#</code> character will be ignored by R during execution. It is essential that sufficient comments are added to your R code so that the code remains understandable and if you share your code with somebody else then they have a way of figuring out what you are trying to do, why and how.</p>
+<p>R is smart enough to figure when the command is not finished and allows you to continue typing on the next line. This usually works well when there are un-finished parentheses or operators at the end. R indicates that it is expecting further inputs by showing the character <code>+</code> at the beginning of the next line. See figure for an example.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># %![Line Continuation for Incomplete Commands](images/incomplete.png)</span></code></pre></div>
+</div>
+<div id="naming-conventions" class="section level3">
+<h3><span class="header-section-number">3.4.3</span> Naming Conventions</h3>
+<p>Object names in R can consist of any combination of alphanumeric characters (<code>a-z</code>, <code>A-Z</code>}, <code>0-9</code>) as well as underscore <code>-</code> and <code>.</code> characters. Object names should not include special characters such as <code>?</code> or space. Object names must start with a letter or a period. Special care should be taken to not include one of the reserved keywords (like <code>function</code> or <code>help</code>) as object names.</p>
+</div>
+</div>
+<div id="rmarkdown-rmd-files" class="section level2">
+<h2><span class="header-section-number">3.5</span> RMarkdown (RMD) Files</h2>
+<p>We will use extensive ise of RMarkdown files in the class. Markdown is a simple formatting syntax for authoring documents. RMarkdown allows you to create Markdown documents with embedded R code in them. RMarkdown documents can then be rendered in variety of output formats such as HTML, PDF, and MS Word documents.</p>
+<p>RStudio streamlines the process of creating an RMarkdown file. Getting started is easy - in RStudio, go File -&gt; New File -&gt; R Markdown (or Alt-F-F-M). This will start a new RMD file for you. It needs some startup information to proceed first, as shown in the image below:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># %![Figure: RMD Startup Dialog](RMDStart.png)</span></code></pre></div>
+<p>Title and Author are self explanatory. As the dialog suggests, you can choose HTML, PDF of Word as default output formats. PDF and Word require you to have a local installed version of TeX or MS-Word. For our class, I recommend that you use HTML as the default output - it is device and platform independent - and capable of handling variety of rich media. We will see later how to include dynamic content like animation and user interaction in these HTML files as well.</p>
+<p>Once you say OK, you will be taken to the default start page. This page has some content already to help you started. You should be able to see the preamble right on top that will generate your document headers and also control various options:</p>
+<pre><code>title: &quot;Untitled&quot;
+author: &quot;Dr. Sanjeev Kumar&quot;
+date: &quot;May 5, 2018&quot;
+output: html_document</code></pre>
+<p>You can make changes by either hand-editng the information above or by clicking the Edit Option icon (which looks like a gear) and choosign your options. For example, the preamble for one of my document looks like the following:</p>
+<pre><code>title: &quot;How To Write RMarkdown Files&quot;
+author: &quot;Dr. Sanjeev Kumar&quot;
+date: &quot;May 5, 2016&quot;
+output:
+  html_document: 
+    highlight: tango
+    number_sections: yes</code></pre>
+<p>Now you can go ahead and add content to your document. When you want to create the output, click the <code>Knit</code> button and a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. We will see later in the document how to embed R code in RMD files.</p>
+<p>It is easy to format RMarkdown files and embed R code in them. For more details on using R Markdown see <a href="http://rmarkdown.rstudio.com" class="uri">http://rmarkdown.rstudio.com</a>.</p>
+</div>
+<div id="embedding-r-code-blocks-in-rmd-files" class="section level2">
+<h2><span class="header-section-number">3.6</span> Embedding R Code Blocks in RMD Files</h2>
+<div id="embedding-options" class="section level3">
+<h3><span class="header-section-number">3.6.1</span> Embedding Options</h3>
+<ul>
+<li>echo</li>
+<li>eval</li>
+<li>cache</li>
+<li>label</li>
+<li>fig.height/width</li>
+</ul>
+</div>
+<div id="embedding-code-blocks-of-other-languages" class="section level3">
+<h3><span class="header-section-number">3.6.2</span> Embedding Code Blocks of Other Languages</h3>
+</div>
+<div id="embedding-in-line-r-code" class="section level3">
+<h3><span class="header-section-number">3.6.3</span> Embedding in-line R Code</h3>
+</div>
+<div id="reproducibility-of-data-analysis" class="section level3">
+<h3><span class="header-section-number">3.6.4</span> Reproducibility of Data Analysis</h3>
+<p>A key advantage of using an RMD file is that the output contains both the R code and the output. That allows for a precise matching of what steps were performed to reach a specific output. Consider the example of a complex chart made in MS-Excel - you would be hard pressed to figure out what exactly was done to create that chart. Whether the chart has some data manipulation in it, whether the chart inadvertently includes a mistake - there is no transparency - and hence you are likely to not have much trust in the chart. In the case of RMD files on the other hand, the entire process of creating the chart is right there in the form of R commands. Anybody else with the same data and the same commands will reach exactly the same output. Your analysis can be reproduced by anybody else - imporving the reliability and trustworthiness of your analysis.</p>
+<p>We discussed “veracity” as one of the four Vs of Big Data. Doing data analytics in a way that is reproducible (e.g through an RMD file) goes a long way towards establishing confidence in the results of the analysis.</p>
+</div>
+</div>
+<div id="key-features-of-rrstudio-ecosystem" class="section level2">
+<h2><span class="header-section-number">3.7</span> Key Features of R/RStudio Ecosystem</h2>
+<div id="open-source-software" class="section level3">
+<h3><span class="header-section-number">3.7.1</span> Open Source Software</h3>
+<p>Open Source Software is a broad term for software that is developed by a community of volunteers and is available free of charge for you and I to use. R is open source with a strong and dedicated community that takes the stewardship of R very very seriously.</p>
+<p>As R is open source, the underlying computer code (the source code) is available for anyone to view and modify. All these extra eyes looking at the code usually means a more reliable, error free and malware resistant software.</p>
+<p>Open source nature of R has both positive and negative impacts. On the positive side, the community helps extend R rapidly by building new packages with new capabilities very quickly. On the negative side, the R platform is built by experts for experts - the focus is on capability and precision - not on ease of use. This makes R a swiss army knife of that is capable of doing almost everything possible in data domain but a knife that can be difficult to learn how to use.</p>
+</div>
+<div id="extensability-of-r" class="section level3">
+<h3><span class="header-section-number">3.7.2</span> Extensability of R</h3>
+<p>R is desiged to be easily extended. You, me and everyone else can write new functionalities for R and have it available for everyone in the world to download and use. The R community has been writing extensions for decades now and the result is a library of thousands of packages. If there is anything data analysis related that you want to do, chances are that somebody else wanted to do it too, has already built a package for it that you can download and use.</p>
+<p>Easy extensability of R is one of the main reasons why R remained the most capable, cutting edge data analytical platform for decades now. R community has written packages to allow you write SQL commands, C++ commands, build geo-maps, build predictive models - all within the R platform. New developments tend to get incorporated in R much faster than in competing statistical software such as Stata, SAS or SPSS.</p>
+</div>
+<div id="usability-of-r" class="section level3">
+<h3><span class="header-section-number">3.7.3</span> Usability of R</h3>
+<p>R is not graphical. Much of R’s capabilities are accessed through typing R commands rather than clicking buttons or accessing menus. R commands allow a level of precision and flexibility that is typically now achievable through a graphical interface. Doing complex tasks successfully in R involves writing a sequence of R commands that are closer to coding in a programming language than using a point and click software.</p>
+<p>While R can be considered to have a steep learning curve, it should be noted that once you get through the learning curve and get used to R’s syntax, you can slice through complex data analysis with much greater speed and capability than competing alternatives. In my opinion, the learning curves for R and competing graphical alternatives look like the figure below. R starts slower and has a difficult jumpstart but if you stay with it for a little bit then R handily outperforms the graphical alternatives.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">curve</span>(x<span class="op">^</span><span class="dv">2</span>,<span class="dt">from =</span> <span class="dv">0</span>,<span class="dt">to =</span> <span class="dv">3</span>, <span class="dt">xlab =</span> <span class="st">&quot;Time&quot;</span>, <span class="dt">ylab=</span><span class="st">&quot;Expertise&quot;</span>, 
+      <span class="dt">col =</span> <span class="st">&quot;red&quot;</span>, <span class="dt">lwd=</span><span class="dv">2</span>, <span class="dt">xaxt =</span> <span class="st">&#39;n&#39;</span>, <span class="dt">yaxt =</span> <span class="st">&#39;n&#39;</span>)
+<span class="kw">abline</span>(<span class="dt">a =</span> <span class="dv">2</span>,<span class="dt">b =</span> <span class="dv">1</span>, <span class="dt">col =</span> <span class="st">&quot;blue&quot;</span>, <span class="dt">lwd =</span> <span class="dv">2</span>)</code></pre></div>
+<div class="figure"><span id="fig:unnamed-chunk-11"></span>
+<img src="bookdown_files/figure-html/unnamed-chunk-11-1.png" alt="Learning Curves for R (red) and alternatives (blue)" width="672" />
+<p class="caption">
+FIGURE 3.1: Learning Curves for R (red) and alternatives (blue)
+</p>
+</div>
+</div>
+<div id="r-is-not-verbose" class="section level3">
+<h3><span class="header-section-number">3.7.4</span> R is NOT Verbose</h3>
+<p>In fact R is very very concise. It will not give you an output until you ask for it. This is very different than most statistical software that tend to overwhelm the user with every possible output possible. R allows you the flexibility to specifically request the levek of detail you need. By default, R will provide only the minimal amount of output.</p>
+</div>
+<div id="object-oriented-programming" class="section level3">
+<h3><span class="header-section-number">3.7.5</span> Object Oriented Programming</h3>
+</div>
+<div id="r-communitys-sense-of-humor" class="section level3">
+<h3><span class="header-section-number">3.7.6</span> R Community’s Sense of Humor</h3>
+<p>R community is a hard working one - they are continuously building new and latest packages - making the R ecosystem even better. R community is also a fun one - a clever one at the very least. For example - look at the nickname for the current version:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">version<span class="op">$</span>nickname</code></pre></div>
+<pre><code>## [1] &quot;Kite-Eating Tree&quot;</code></pre>
+<p>The R community is very helpful and will answer your questions if you post on relevant forums like StackExchange.com. However, they don’t suffer fools and xpect people who ask questions to have done their homework. Over the years, the R community has developed an extensive knowledgebase that is only a google search away for you. As you go further in your exploration of R, attempt to learn from the community and hopefully one day be a bonafide member of the community.</p>
+</div>
+</div>
+<div id="common-issues-pitfalls-bugs-obstacles-and-their-solutions" class="section level2">
+<h2><span class="header-section-number">3.8</span> Common Issues, Pitfalls, Bugs, Obstacles and Their Solutions</h2>
+<p>This section is my master list of common issues that students encounter when they start working with R. You may want to not read this in full right now - treat this as a reference section. When you run into an issue, come by here and see if I have a solution for you.</p>
+<div id="i-have-an-older-r-installtion.-how-do-i-upgrade-it" class="section level3">
+<h3><span class="header-section-number">3.8.1</span> I have an older R installtion. How do I upgrade it?</h3>
+<p>You might have an old, not updated version of R in your machine. You can check the current version of your R by running the <code>version</code> command. If you have an older version and if you are in a Windows machine, then upgrading your R installation is easy with the <code>installr</code> package. The <code>installr</code> package has the handy <code>updateR</code> command that will automatically update your R installation to the latest one. A sample code to accomplish this is below:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#Sample code, not being evaluated here</span>
+<span class="kw">install.packages</span>(<span class="st">&quot;installr&quot;</span>) <span class="co"># install the installr package </span>
+<span class="kw">library</span>(installr)
+<span class="kw">updateR</span>() <span class="co"># updating your R version</span>
+version <span class="co"># command for checking your current R version</span></code></pre></div>
+<p>If you happen to be in a Mac or Linux machine, then you would want to download the current version of R and install. This process is similar to installing a fresh new installation of R as discussion in a previous section.</p>
+</div>
+<div id="help---i-am-not-being-able-to-install-any-packages" class="section level3">
+<h3><span class="header-section-number">3.8.2</span> Help - I am not being able to install any packages!</h3>
+<p>If you are unable to install R packages, there are a few things we can try.<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a> First thing to check would be your anti-virus software. Several anti-virus software balk at allowing R to perform tasks that may be interpreted as a security risk (for example - downloading and installing packages from the Internet). You can try to work around this by disabling/uninstalling your anti-virus or adding R to the exceptions list in the anti-virus.</p>
+<p>You may also want to check whether you have administrator access in the machine you are working on. Several essential tasks in R require the user to have administrator access.</p>
+<p>Lastly, R may be attempting to install packages into a directory that it does not have write permissions on. This can sometimes happen if you are on a computer on a network with mapped drives. You can work around this problem by asking R to install your packages in a safe, editable directory where you have write access. R installs all packages in a library directory - you can find out the current location of the library directory with the <code>.libPaths</code> command. You can use the <code>.libPaths</code> command to then add a directory location as your personal library location so that R can then install packages in that directory. A sample code to accomplish this is shown below:<a href="#fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">.libPaths</span>() <span class="co">#Shows the current library path</span></code></pre></div>
+<pre><code>## [1] &quot;/Library/Frameworks/R.framework/Versions/3.4/Resources/library&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># You can add your own library folder to the path</span>
+<span class="co">#libPaths( c( .libPaths(), &quot;C:/Whatever/Whatever...&quot;) )</span></code></pre></div>
+</div>
+<div id="why-is-the-edit-command-not-working-for-me" class="section level3">
+<h3><span class="header-section-number">3.8.3</span> Why is the edit command not working for me?</h3>
+<p>One of the first R commands that gives trouble is the <code>edit</code> command. As the name suggests, <code>edit</code> is used for editing data - typically it shows the data to be edited in a table format with editable cells. This specific command (and its cousin, the <code>fix</code> command) seems to be very sensitive to the keyboard layouts, especially on Apple machines. This problem is hardware oriented and may prove difficult to solve. I usually recommend to ignore these two commands and take care of your data editing needs using alternative methods. If you were using <code>edit</code> for only viewing the data, then <code>View</code> is a good alternative for that.</p>
+
+
+</div>
+</div>
+</div>
+
+
+
+<div class="footnotes">
+<hr />
+<ol start="1">
+<li id="fn1"><p>I once thought it was very clever to have this as my prompt “Sanjeev Says:”. I no longer think so.<a href="our-tools-r-rstudio.html#fnref1">↩</a></p></li>
+<li id="fn2"><p>I am not going to insult your intelligence by asking you to make sure that you have a live Internet connection!<a href="our-tools-r-rstudio.html#fnref2">↩</a></p></li>
+<li id="fn3"><p>Last command commented as C:/Whatever does not exist obviously - so would have resulted in an error - hence it is commented out.<a href="our-tools-r-rstudio.html#fnref3">↩</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="advanced-big-data-analytics.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="syllabi.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook/js/app.min.js"></script>
+<script src="libs/gitbook/js/lunr.js"></script>
+<script src="libs/gitbook/js/plugin-search.js"></script>
+<script src="libs/gitbook/js/plugin-sharing.js"></script>
+<script src="libs/gitbook/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": true,
+"facebook": false,
+"twitter": true,
+"google": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/clarifyR/AABookDown/edit/master/03-our-tools.Rmd",
+"text": "Edit"
+},
+"download": ["bookdown.pdf"],
+"toc": {
+"collapse": "none"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
