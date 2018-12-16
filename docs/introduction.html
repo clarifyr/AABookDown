@@ -110,7 +110,18 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ul></li>
 <li class="chapter" data-level="" data-path="about-the-author.html"><a href="about-the-author.html"><i class="fa fa-check"></i>About the Author</a></li>
 <li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a><ul>
-<li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html#archive---delete"><i class="fa fa-check"></i><b>1.1</b> Archive - Delete</a></li>
+<li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html#who-is-this-book-for"><i class="fa fa-check"></i><b>1.1</b> Who Is This Book For?</a></li>
+<li class="chapter" data-level="1.2" data-path="introduction.html"><a href="introduction.html#about-this-document"><i class="fa fa-check"></i><b>1.2</b> About This Document</a></li>
+<li class="chapter" data-level="1.3" data-path="introduction.html"><a href="introduction.html#how-is-this-book-structured"><i class="fa fa-check"></i><b>1.3</b> How is This Book Structured</a><ul>
+<li class="chapter" data-level="1.3.1" data-path="introduction.html"><a href="introduction.html#part-i-getting-started"><i class="fa fa-check"></i><b>1.3.1</b> Part I: Getting Started</a></li>
+<li class="chapter" data-level="1.3.2" data-path="introduction.html"><a href="introduction.html#part-ii-data-exploration-and-visualization"><i class="fa fa-check"></i><b>1.3.2</b> Part II: Data Exploration and Visualization</a></li>
+<li class="chapter" data-level="1.3.3" data-path="introduction.html"><a href="introduction.html#part-iii-traditional-statistical-modeling"><i class="fa fa-check"></i><b>1.3.3</b> Part III: Traditional Statistical Modeling</a></li>
+<li class="chapter" data-level="1.3.4" data-path="introduction.html"><a href="introduction.html#part-iv-machine-learning-and-predictive-analytics"><i class="fa fa-check"></i><b>1.3.4</b> Part IV: Machine Learning and Predictive Analytics</a></li>
+<li class="chapter" data-level="1.3.5" data-path="introduction.html"><a href="introduction.html#part-v-putting-it-all-together"><i class="fa fa-check"></i><b>1.3.5</b> Part V: Putting It All Together</a></li>
+<li class="chapter" data-level="1.3.6" data-path="introduction.html"><a href="introduction.html#part-v-appendices-bibliography-and-index"><i class="fa fa-check"></i><b>1.3.6</b> Part V: Appendices, Bibliography and Index</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="introduction.html"><a href="introduction.html#how-to-read-this-book"><i class="fa fa-check"></i><b>1.4</b> How to Read This Book</a></li>
+<li class="chapter" data-level="1.5" data-path="introduction.html"><a href="introduction.html#archive---delete"><i class="fa fa-check"></i><b>1.5</b> Archive - Delete</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="the-second-chapter.html"><a href="the-second-chapter.html"><i class="fa fa-check"></i><b>2</b> The Second Chapter</a></li>
 <li class="appendix"><span><b>Appendix</b></span></li>
@@ -142,8 +153,68 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
             <section class="normal" id="section-">
 <div id="introduction" class="section level1">
 <h1><span class="header-section-number">Chapter 1</span> Introduction</h1>
+<p>Welcome to <strong>Advanced Big Data Analytics for Business with R</strong>. Let’s get started.</p>
+<div id="who-is-this-book-for" class="section level2">
+<h2><span class="header-section-number">1.1</span> Who Is This Book For?</h2>
+<p>This book is for business students, practitioners and executives who want to have hands-on experience in working with business related big data and want to extract actionable insights from the data using advanced analytical techniques. This book is application oriented and hence focuses on the application of advanced analytical techniques rather than the theoretical details. Consequently, this book is not for readers solely focused on the theoretical, statistical part of data analytics.</p>
+<p>This book assumes that the readers have basic familiarity with introductory probability and statistics. This domain is easier to follow and understand if the reader also has <em>some</em> exposure to <em>some</em> kind of computer programming although that is not a necessity. This book has been written for a practitioner audience, not an academic one. The book aims to be an exhaustive reference resource for practitioners - that’s why it starts with baby steps of introducing R and basic data manipulation and ends at the other end with advanced Machine Learning algorithms and complex model improvement algorithms.</p>
+<p>Thank you for placing your trust in this book. This chapter will provider further details about this book and how to best read/use this book.</p>
+</div>
+<div id="about-this-document" class="section level2">
+<h2><span class="header-section-number">1.2</span> About This Document</h2>
+<p>This document, which you are probably seeing as a GitHub eBook or a PDF document or even as printed book, has been written entirely using R and RStudio. It uses the R packages <code>bookdown</code> along with <code>rmarkdown</code> to integrated R code inside my favorite document creation system called <strong>LaTeX</strong>. This document has been created entirely using Open Source tools and has been released back into the Open Source ecosystem for free using the GNU General Public License (GPL). You are free to share this document with others as long as you comply with the GPL license. GPL License usually require that the product (in this case, this book) be made available free or charge; and any subsequent product made using the GPL Licensed product must also be made available free of charge <span class="citation">(Foundation <a href="#ref-TheGNUGe51:online">2007</a>)</span>.</p>
+<p>This is my first attempt at writing a book size document. I have had to develop a bunch of workarounds to make the process work and get a quality output. The source code for this book is available for public use free of charge at: <a href="https://github.com/clarifyR/AABookDown" class="uri">https://github.com/clarifyR/AABookDown</a>.</p>
+</div>
+<div id="how-is-this-book-structured" class="section level2">
+<h2><span class="header-section-number">1.3</span> How is This Book Structured</h2>
+<p>This book covers a wide range of material. The material is organized in 5 parts, 19 chapters and several appendices.</p>
+<div id="part-i-getting-started" class="section level3">
+<h3><span class="header-section-number">1.3.1</span> Part I: Getting Started</h3>
+<p>We set ourselves for the book - download and install all needed software; figure our way around R and RStudio and learn the basics of the R language. Essentially lay down enough of a foundation that we can start getting productive. For students without a computer programming background, it is essential that they do not rush this part. Our success in later parts depend upon us getting comfortable with the material here.</p>
+</div>
+<div id="part-ii-data-exploration-and-visualization" class="section level3">
+<h3><span class="header-section-number">1.3.2</span> Part II: Data Exploration and Visualization</h3>
+<p>Real data analytics begins with us understanding and getting a handle on the data. This typically involves cleaning up the data, generating descriptive statistics to better understand the data and finally creating visualizations that allow us to better understand the underlying complexity of the data. In my opinion, data cleaning is the most under-appreciated part of data analytics. It often takes more time and effort than the actual analysis that follows.</p>
+<p>Data visualization has emerged as a key tool in Big Data Analytics. We specifically focus our attention here on a subset of data visualization that is important in the business context - creating data dashboards that can help managerial decision making.</p>
+</div>
+<div id="part-iii-traditional-statistical-modeling" class="section level3">
+<h3><span class="header-section-number">1.3.3</span> Part III: Traditional Statistical Modeling</h3>
+<p>Even advanced analytic techniques like machine learning algorithms in the next part have their foundations in traditional statistical methodologies. Classical statistical modeling approaches like Linear Regression are still the benchmark given their immense popularity, flexibility and stability. In this part of the book, we explore traditional statistical analysis tools like Linear Regression, Generalized Linear Models like Logistic and Survival Models, Principal Components and Factor Analysis, Time Series Analysis and so on.</p>
+<p>As we assume that you are already familiar with basic probability and statistics, we will focus on application of the methodologies and not the underlying theory. We will also focus on how to tweak these tools for the Big Data world as many of these tools run into trouble when sample sizes are quite large. Bigger is not always better - traditional statisticall methodologies were developed/optimized for smaller sample sizes. Using them for large sample sizes give rise to unique issues and problems - we will discuss how to address them.</p>
+</div>
+<div id="part-iv-machine-learning-and-predictive-analytics" class="section level3">
+<h3><span class="header-section-number">1.3.4</span> Part IV: Machine Learning and Predictive Analytics</h3>
+<p>This is the largest and the most important part of the book. This is why this book was written in the first place - an overview of data analytics tools specific to Big Data - variously known as Machine Learning, Statistical Learning, Predictive Analytics, Data Mining as so on. This book focuses on tools that help us make sense of Big Data and helps us automate the extraction of managerial decision making insights from Big Data.</p>
+<p>As with much of the rest of the book, the focus is on applying the tools rather than their theoretical/mathematical underpinnings. We will discuss enough theory to develop an overall understanding and then devote our energies on making these tools work on real datasets.</p>
+</div>
+<div id="part-v-putting-it-all-together" class="section level3">
+<h3><span class="header-section-number">1.3.5</span> Part V: Putting It All Together</h3>
+<p>Now that we have gone through all the elements individually, we can move forward to create a combined, integrated approach that puts all these pieces together. How to combine different models so that they result in an output better than sum of their parts? How to ensure that our models improve as more data become available?</p>
+<p>We will conclude by running a couple of large integrated data analytics projects that will combine elements discussed in the book.</p>
+</div>
+<div id="part-v-appendices-bibliography-and-index" class="section level3">
+<h3><span class="header-section-number">1.3.6</span> Part V: Appendices, Bibliography and Index</h3>
+<p>Back matter of the book. The Index in the end has three main components - Key Concepts, R Commands and R Packages. Appendices include syllabus for the two courses this book is primarily used for and other miscellaneous content that did not fit in one of the main matter chapters.</p>
+<p>There are a lot of quality, free, online resources available for building up your R and Data Analytics skills before you go through this book or the associated courses. They are listed in Appendix: Key References. A fully fleshed data analysis example has been presented on Appendix: Data Analysis Example to give you an idea of the power and range of what can be accomplished with just a little bit of familiarity with R.</p>
+</div>
+</div>
+<div id="how-to-read-this-book" class="section level2">
+<h2><span class="header-section-number">1.4</span> How to Read This Book</h2>
+<p>You would have noticed by now that this book integrates R code within its text. Most of the time R code takes the form of dedicated code blocks like the one below:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#This is a demo code block</span>
+<span class="kw">print</span>(<span class="st">&quot;Hello World&quot;</span>)</code></pre></div>
+<pre><code>## [1] &quot;Hello World&quot;</code></pre>
+<p>As you can see from above, code blocks are printed in color, in <code>fixed width font</code>. There is a color scheme here that you will soon become familiar with - comments are in italics and kind of violet looking, functions are in reddish color, strings appear bluish and so on. The output of the code block appears right after - for example - the output of the <code>print()</code> command follows the code above.</p>
+<p>You would notice that whenever we refer to a R command in a significant way (like <code>print()</code> in paragraph above), the command is printed in <code>fixed width font</code>, in red color with a yellow highlight that makes it easy for you to see which commands are discussed significantly on the page. The highlighting also ensures that an entry for the command is placed in the Index provided at the end of the book. For times when a command is mentioned in text in a minor way not necessating a margin and Index entry, they will be typed in <code>fixed width font</code>.</p>
+<p>Like R Commands, this book provides special formatting for R Packages used in the book. R Packages are fomatted like R Commands but in blue color - check our reference of the <code>clarifyR</code> package earlier - blue fixed width font text with yellow highlighting and finally an entry in the Packages section of the Index.</p>
+<p>Lastly, special formatting is provided for key concepts - similar to R Commands and Packages in all respects except that they are in bolded and in black color and their Index entry is in the Key Concepts section. For example: this book focuses on <code>Open Source</code> software - that are created by a community of software developers for use by the community, usually made available for free.</p>
+<p>The three special formatting elements - commands, packages and key concepts - ensure that you have a summary of significant elements discussed in the page just by looking for highlighted items.</p>
+
+<p>Well - you wouldn’t know until you spend some time with it. Dig in.</p>
+<p>A quick word of caution though before you get too deep: this book (and the associated courses) are very hands-on. There is no point in reading this book like a sequence of text. This book should be seen more as an illustrated text - illustrated with relevant R commands and material. You should read this book alongside an RStudio session - trying all the commands there as you read along. You will need to get comfortable with a lot of command line typing, keyboard shortcuts and figuring workarounds to inevitable problems that will arise. We will often get into situations where there will be no tested/optimized/prescribed solution and we will need to figure our way out - often with some trial and error. You should be comfortable with such ambiguity.</p>
+</div>
 <div id="archive---delete" class="section level2">
-<h2><span class="header-section-number">1.1</span> Archive - Delete</h2>
+<h2><span class="header-section-number">1.5</span> Archive - Delete</h2>
 <p>This section holds the placeholder information that will be deleted after the book is built.</p>
 <p>We have a nice figure in Figure <a href="introduction.html#fig:hello">1.1</a>, and also a table in Table <a href="introduction.html#tab:iris">1.1</a>.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">par</span>(<span class="dt">mar =</span> <span class="kw">c</span>(<span class="dv">4</span>, <span class="dv">4</span>, <span class="dv">1</span>, .<span class="dv">1</span>))
@@ -215,6 +286,12 @@ FIGURE 1.1: Hello World!
 </tbody>
 </table>
 
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references">
+<div id="ref-TheGNUGe51:online">
+<p>Foundation, Free Software. 2007. “The Gnu General Public License V3.0 - Gnu Project - Free Software Foundation.” <a href="https://www.gnu.org/licenses/gpl-3.0.en.html" class="uri">https://www.gnu.org/licenses/gpl-3.0.en.html</a>.</p>
 </div>
 </div>
             </section>
