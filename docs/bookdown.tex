@@ -176,7 +176,7 @@
 
 \title{Advanced Big Data Analytics for Business with R}
 \author{Sanjeev Kumar}
-\date{2018-12-16}
+\date{2018-12-17}
 
 \usepackage{amsthm}
 \newtheorem{theorem}{Theorem}[chapter]
@@ -619,10 +619,7 @@ Sepal.Length & Sepal.Width & Petal.Length & Petal.Width & Species\\
 
 \chapter{Advanced Big Data Analytics}\label{advanced-big-data-analytics}
 
-We talk about the \emph{FOO} method\index{FOO} in this chapter.
-
-`In God We Trust; All Others Must Bring Data' \emph{-- Willian Edwards
-Deming}
+Content to be added.
 
 \chapter{Our Tools: R, RStudio}\label{our-tools-r-rstudio}
 
@@ -851,7 +848,7 @@ shown in figure below.
 
 \begin{figure}
 
-{\centering \includegraphics[width=0.5\linewidth]{images/help} 
+{\centering \includegraphics[width=0.8\linewidth]{images/help} 
 
 }
 
@@ -1215,6 +1212,707 @@ solve. I usually recommend to ignore these two commands and take care of
 your data editing needs using alternative methods. If you were using
 \texttt{edit} for only viewing the data, then \texttt{View} is a good
 alternative for that.
+
+\chapter{Essential R Language
+Elements}\label{essential-r-language-elements}
+
+In this chapter we will start playing with some basic R functionalities
+and start getting comfortable with typing commands in the R console. All
+code examples you see in the chapter are opportunities for you to type
+them in R Console yourself and see whether you get the same output.
+There is no better way to find your way around R than to get your hands
+dirty - and no better time than now. So lets get started.
+
+\section{Doing Calculations - Arithmatic
+Operators}\label{doing-calculations---arithmatic-operators}
+
+You can use R as a glorified calculator. All arithmatic calculations can
+be easily performed using Arithmatic Operators like \texttt{+}
+(addition), \texttt{-} (subtraction), \texttt{*} (multiplication),
+\texttt{/} (division) and \texttt{\^{}} (exponent).
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DecValTok{10}  \OperatorTok{+}\StringTok{    }\DecValTok{20}  \CommentTok{#As you can see - spaces don't matter, mostly.}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 30
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DecValTok{20}\OperatorTok{/}\DecValTok{3} \CommentTok{#Note the nunber of digits after decimal}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 6.667
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DecValTok{16} \OperatorTok{^}\StringTok{ }\FloatTok{0.5}  \CommentTok{# Usual Arithmatic Operators: +, -, * , /, ^}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 4
+\end{verbatim}
+
+You would note that the outputs to the commands have this
+\texttt{{[}1{]}} before them. The number indicates how many values there
+are in the output. Since each of the commands above lead to a single
+output value - you see the \texttt{{[}1{]}} there before the output.
+
+When you have complicated Arithmatic Expressions, R follows usual
+Arithmatic Operator Precedance: Brackets, Exponent, Division and
+Multiplication, Addition and Subtraction - in that order. Go Left to
+Right for the same precedance. Of course it is preferable to put in
+enough paratheses so that you are not relying on R's operator precedance
+for accurate execution of your commands.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DecValTok{5} \OperatorTok{+}\StringTok{ }\DecValTok{8} \OperatorTok{/}\StringTok{ }\DecValTok{2} \OperatorTok{*}\StringTok{ }\DecValTok{4} \OperatorTok{-}\StringTok{ }\DecValTok{3} \CommentTok{# First * then / then + then - }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 18
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# You should include enough parantheses}
+\NormalTok{(}\DecValTok{5} \OperatorTok{+}\StringTok{ }\DecValTok{8}\NormalTok{) }\OperatorTok{/}\NormalTok{((}\DecValTok{2} \OperatorTok{*}\StringTok{ }\DecValTok{4}\NormalTok{) }\OperatorTok{-}\StringTok{ }\DecValTok{3}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 2.6
+\end{verbatim}
+
+Two arithmatic operators that many are not familiar with are: Integer
+Division and Remainder operators. The Integer Division operator:
+\texttt{\%/\%}, provides just the quotient for a division operation
+while the remainder operator: \texttt{\%\%}, provides just the remainder
+for a division operation.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DecValTok{10} \OperatorTok{%/%}\StringTok{ }\DecValTok{3} \CommentTok{# Integer division - only gives the quotient as the output}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 3
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DecValTok{10} \OperatorTok{%%}\StringTok{ }\DecValTok{3} \CommentTok{# The counterpart to %/%, gives remainder as the output}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 1
+\end{verbatim}
+
+\section{Logical Operators}\label{logical-operators}
+
+Just as arithmatic expressions evaluate to a numerical result, logical
+expressions evaluate to a logical result - either \texttt{TRUE} or
+\texttt{FALSE}. Note the upper case format for the two keywords. The
+letters \texttt{T} and \texttt{F} are also acceptable values as
+shorthand for \texttt{TRUE} and \texttt{FALSE}. Logical expressions can
+be created using Logical Operators: equal to (\texttt{==}), greate than
+(\texttt{\textgreater{}}), less than (\texttt{\textless{}}), greater
+than or equal to (\texttt{\textgreater{}=}), less than or equal to
+(\texttt{\textless{}=}) and finally, not equal to (\texttt{!=}).
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DecValTok{10} \OperatorTok{>}\StringTok{ }\DecValTok{20} \CommentTok{#Should evaluate to FALSE}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] FALSE
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FloatTok{12.37} \OperatorTok{<=}\StringTok{ }\FloatTok{23.66} \CommentTok{#Should evaluate to TRUE}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] TRUE
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{(}\DecValTok{10}\OperatorTok{/}\DecValTok{3}\NormalTok{) }\OperatorTok{==}\StringTok{ }\NormalTok{(}\DecValTok{30}\OperatorTok{/}\DecValTok{9}\NormalTok{) }\CommentTok{#Should evaluate to TRUE}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] TRUE
+\end{verbatim}
+
+Logical values can be combined using \texttt{AND} and \texttt{OR}
+constructs. When combining two logical values using \texttt{OR}, the
+resulting value is \texttt{TRUE} if any of the two values are
+\texttt{TRUE}. When combining two logical values using \texttt{AND}, the
+resulting value is \texttt{TRUE} only of both the values are
+\texttt{TRUE}. The command for \texttt{AND} is \texttt{\&} while the
+command for \texttt{OR} is the \texttt{\textbar{}} character.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{(}\DecValTok{10} \OperatorTok{>}\StringTok{ }\DecValTok{20}\NormalTok{) }\OperatorTok{|}\StringTok{ }\NormalTok{(}\FloatTok{12.37} \OperatorTok{<=}\StringTok{ }\FloatTok{23.66}\NormalTok{) }\CommentTok{#Should evaluate to TRUE}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] TRUE
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{(}\DecValTok{10} \OperatorTok{>}\StringTok{ }\DecValTok{20}\NormalTok{) }\OperatorTok{&}\StringTok{ }\NormalTok{(}\FloatTok{12.37} \OperatorTok{<=}\StringTok{ }\FloatTok{23.66}\NormalTok{) }\CommentTok{#Should evaluate to FALSE}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] FALSE
+\end{verbatim}
+
+You can use the \texttt{NOT} operator to convert a \texttt{TRUE} value
+to \texttt{FALSE} and vice versa - the corresponding command is the
+\texttt{!} character. You can use logical operators to compare
+non-numeric values as well.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\OperatorTok{!}\OtherTok{TRUE} \CommentTok{#Should evaluate to FALSE}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] FALSE
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\StringTok{"Dog"} \OperatorTok{>}\StringTok{ "Cat"} \CommentTok{#As everybody know, this is TRUE}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] TRUE
+\end{verbatim}
+
+As the example above shows, comparing non-numeric values can result in
+interesting results \footnote{We have not discussed different data types
+  yet. Values enclosed in quote marks are text values, typically called
+  Strings}. When two strings are compared, they are essentially compared
+one character at a time. In the example above, the character C is
+compared with character D. The comparison is based on the Unicode number
+associated with the characters. As D has a higher Unicode number than C,
+``Dog'' is considered higher than ``Cat''. Interesting thought
+experiment: 1000 \textgreater{} 50: True or False? ``1000''
+\textgreater{} ``50'': True or False?
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DecValTok{1000} \OperatorTok{>}\StringTok{ }\DecValTok{50}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] TRUE
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\StringTok{"1000"} \OperatorTok{>}\StringTok{ "50"}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] FALSE
+\end{verbatim}
+
+\section{Variables}\label{variables}
+
+R keeps all data in \textbf{Variables}. Variables can be thought of as a
+space in computer's memory where R can store data. Once we have created
+a variable, we can then use the variable name to access, manipulate and
+work with the data kept in the variable. Variables are created using the
+\textbf{Assignment Operator} written as \texttt{\textless{}-}. The arrow
+indicates the direction of assignment. Operators also exist to do
+assignment in the opposite direction \texttt{-\textgreater{}} and do the
+same operation as assignment operator. R also supports the assignment
+operator command used by many other programming languages \texttt{=},
+but it is customary to use the right-to-left version of assignment
+operator. \footnote{I find the R version of assignment operator to be
+  much more intuitive as the direction of value assignment is clearly
+  specified. The \texttt{=} charater usually confuses beginners into
+  thinking that we are ``equating'' values instead of the correct
+  interpretation of ``assigning'' value from one side to the other.}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{revenue <-}\StringTok{ }\DecValTok{100} \CommentTok{#Typical way of creating a variable and assigning value}
+\CommentTok{# Above is the recommended approach}
+\NormalTok{revenue =}\StringTok{ }\DecValTok{100} \CommentTok{#Alternate way of doing same as above}
+\CommentTok{#100 -> revenue #Reverse direction assignment}
+\NormalTok{revenue <-}\StringTok{ }\NormalTok{revenue }\OperatorTok{+}\StringTok{ }\DecValTok{300} \CommentTok{#Performing calculations}
+\KeywordTok{print}\NormalTok{(revenue) }\CommentTok{#Printing/showing the value inside the variable}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 400
+\end{verbatim}
+
+The first three line of the code above should be read as the value 100
+is assigned to the variable \texttt{revenue}. In the fourth line, we add
+300 to the current value of variable \texttt{revenue} and the resulting
+value (in this case 400) is then assigned to the variable
+\texttt{revenue}. So the value in the variable \texttt{revenue} is now
+400, which is shown as output in the last line.
+
+A numeric variable like \texttt{revenue} above can be used just like a
+number to perform all usual arithmetic operations.
+
+\section{Variable Data Types}\label{variable-data-types}
+
+Variables can store different types of data. We saw integer numerical
+data in the examples above. Other common data types include floating
+point numbers (fractional numbers), characters data (i.e.~a single
+character), text data (called strings - as in string of characters) and
+logical data (true or false). We can find the data type of a variable by
+using the \texttt{class} command.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{numvalue <-}\StringTok{ }\FloatTok{20.56} \CommentTok{#Creating a numeric variable}
+\KeywordTok{class}\NormalTok{(numvalue) }\CommentTok{#Finding data type of numvalue variable}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "numeric"
+\end{verbatim}
+
+\subsection{Numeric Data}\label{numeric-data}
+
+Variables of numeric data type can store both integers and floating
+point values. Unlike many programming languages, R does not have various
+different kinds of integers and floating point numbers defined to
+optimize memory usage.
+
+\subsection{String Data}\label{string-data}
+
+\textbf{String} or text data \footnote{Text is nothing but a string of
+  characters, hence the name String} is written within quote marks
+\texttt{"\ "} to differentiate them from text that represent things like
+object names. An empty string (a text data with no characters) is
+usually represented by two quote marks with nothing within - like
+\texttt{""}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{day.name <-}\StringTok{ "Sunday"} \CommentTok{#Assigns the string Sunday to variable day.name}
+\NormalTok{someday <-}\StringTok{ ""} \CommentTok{#Empty string assigned to variable someday}
+\end{Highlighting}
+\end{Shaded}
+
+String is a very useful data type as all other types of data can be
+saved as a string. For example - we can save numeric data (``23.37''),
+date data (``12/27/1976''), logical data (``TRUE'') etc. all as string.
+R has several useful commands for working with string data. You can
+connect two strings together using the \textbf{String Concatenation}
+function \textbf{\texttt{paste}}. You can calculate the number of
+characters in a string using the \textbf{\texttt{nchar}} function. Many
+other strings related commands are discussed later in this book.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{nchar}\NormalTok{(day.name); }\KeywordTok{nchar}\NormalTok{(someday)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 6
+\end{verbatim}
+
+\begin{verbatim}
+## [1] 0
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{message <-}\StringTok{ }\KeywordTok{paste}\NormalTok{(day.name, }\StringTok{" is a great day!"}\NormalTok{); message}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "Sunday  is a great day!"
+\end{verbatim}
+
+\section{Logical Data}\label{logical-data}
+
+Variables can hold logical values using the two keywords \texttt{TRUE}
+and \texttt{FALSE}. Logical values typically result from the use of
+logical operators such as the equality operator \texttt{==}. Note the
+two \texttt{=} signs there which differetiates it from the version of
+assignment operator we saw before.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DecValTok{4} \OperatorTok{==}\StringTok{ }\DecValTok{6} \CommentTok{#Is 4 equal to 6, result FALSE}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] FALSE
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{someday }\OperatorTok{==}\StringTok{ "Tuesday"} \CommentTok{#Again result shoukd be FALSE}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] FALSE
+\end{verbatim}
+
+\section{Converting Between Data
+Types}\label{converting-between-data-types}
+
+Its easy to convert variables from one data type to another. Conversion
+functions usually take the form of \textbf{\texttt{as.xxx}} where
+\texttt{xxx} is the desired datatype. For example: \texttt{as.string}
+converts to a String, \texttt{as.numeric} converts to a numeric data
+type and so on.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{x <-}\StringTok{ "12.36"} \CommentTok{#Creating a String variable}
+\NormalTok{y <-}\StringTok{ }\KeywordTok{as.numeric}\NormalTok{(x); y }\CommentTok{#Converting to a numeric value and displaying}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 12.36
+\end{verbatim}
+
+\section{Vectors}\label{vectors}
+
+Variables store a single value. If you need to store multiple values
+then you need a \textbf{\texttt{Vector}}. Vectors can be created in the
+same way a variables are created, except that we can assign multiple
+values to a vector. A handy function for combining multiple values in
+one vector is the \textbf{combine} function written as \texttt{c}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{grades <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\FloatTok{3.2}\NormalTok{, }\DecValTok{3}\NormalTok{,}\DecValTok{1}\NormalTok{, }\FloatTok{2.7}\NormalTok{, }\FloatTok{3.9}\NormalTok{, }\FloatTok{4.0}\NormalTok{) }\CommentTok{#Grades of five students}
+\KeywordTok{class}\NormalTok{(grades) }\CommentTok{#A vector with numeric values}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "numeric"
+\end{verbatim}
+
+The code above created a vector named \texttt{grades} that has 5
+elements. Vectors are very useful because R provides several easy ways
+to interact with different elements of a vector. We can access
+individual elements of a vector using the \texttt{{[}\ {]}} notation -
+called \textbf{Logical Indexing}. We can use the
+\textbf{\texttt{length}} function to find out how many elements there
+are in the vector.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{grades[}\DecValTok{2}\NormalTok{] }\CommentTok{#Gets the second element of the vector}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 3
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{grades[}\DecValTok{4}\NormalTok{] <-}\StringTok{ }\DecValTok{3} \CommentTok{#Changes 4th element of the vector to 3}
+\KeywordTok{length}\NormalTok{(grades) }\CommentTok{#Gets the length (number of elements) of the vector}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 6
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{grades }\OperatorTok{-}\StringTok{ }\FloatTok{0.1} \CommentTok{#Adds 2 to *each* element of the vector }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 3.1 2.9 0.9 2.9 3.8 3.9
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{grades }\CommentTok{#Displays current elements of the vector}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 3.2 3.0 1.0 3.0 3.9 4.0
+\end{verbatim}
+
+Vectors are also useful for doing element-by-element calculations. For
+example, if we have another vector for number of hours of work for the
+week, we can calculate number of hours used for work and sleep as
+follows:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{work.per.day <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{9}\NormalTok{, }\DecValTok{11}\NormalTok{, }\DecValTok{10}\NormalTok{, }\DecValTok{8}\NormalTok{, }\DecValTok{6}\NormalTok{, }\DecValTok{3}\NormalTok{, }\DecValTok{2}\NormalTok{) }\CommentTok{#Create new vector}
+\NormalTok{sleep.per.day <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{6}\NormalTok{, }\DecValTok{7}\NormalTok{, }\DecValTok{4}\NormalTok{, }\DecValTok{10}\NormalTok{, }\DecValTok{8}\NormalTok{, }\DecValTok{7}\NormalTok{, }\DecValTok{11}\NormalTok{)}
+\NormalTok{work.and.sleep <-}\StringTok{ }\NormalTok{sleep.per.day }\OperatorTok{+}\StringTok{ }\NormalTok{work.per.day }
+\CommentTok{#Added two vectors element by element}
+\KeywordTok{print}\NormalTok{(work.and.sleep) }\CommentTok{#Show added values}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 15 18 14 18 14 10 13
+\end{verbatim}
+
+It is easy to access data elements inside a vector. All elements are
+assigned an index number - unlike many programming languages, R starts
+counting with 1 rather than 0.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{wed.hours <-}\StringTok{ }\NormalTok{work.per.day[}\DecValTok{3}\NormalTok{] }\CommentTok{#Extracts third element}
+\NormalTok{work.per.day[}\DecValTok{7}\NormalTok{] <-}\StringTok{ }\DecValTok{6} \CommentTok{#Changes 7th element of the vector}
+\end{Highlighting}
+\end{Shaded}
+
+Functions \texttt{edit} and \texttt{fix} can be used to edit existing
+vectors. Number of elements in a vector can be calculated using the
+\texttt{length} function.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{length}\NormalTok{(work.per.day)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 7
+\end{verbatim}
+
+\section{Factors}\label{factors}
+
+\section{Using Built-In Functions}\label{using-built-in-functions}
+
+R includes many \textbf{functions\emph{\}\textbf{. Functions take some
+values as inputs (often called }arguments\textbf{), perform some
+calculation and return the result. For example \texttt{sqrt()}, the
+}square root function}\}} takes a value and returns its square root.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{sqrt}\NormalTok{(}\DecValTok{100}\NormalTok{) }\CommentTok{#Calculate square root of 100}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 10
+\end{verbatim}
+
+R includes perhaps thousands of functions for different tasks. Some
+functions can take several arguments with many of them being optional.
+Such optional arguments typically have a default value that is used in
+case a value is not provided for that argument. When supplying several
+arguments, it is a good practice to used **named arguments*\}** as shown
+below.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{#Calling functions with name arguments}
+\KeywordTok{round}\NormalTok{(}\DataTypeTok{x =} \FloatTok{1.23456789}\NormalTok{, }\DataTypeTok{digits =} \DecValTok{4}\NormalTok{) }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 1.235
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{#Arguments passed in order, withour names}
+\KeywordTok{round}\NormalTok{(}\FloatTok{1.23456789}\NormalTok{, }\DecValTok{4}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 1.235
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{#Using default values for optional arguments}
+\KeywordTok{round}\NormalTok{(}\FloatTok{1.23456789}\NormalTok{) }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 1
+\end{verbatim}
+
+The first line above shows running (or calling) the function
+\texttt{round} with explicitly named arguments. \texttt{x} represents
+the number to be rounded and \texttt{digits} represents how many digits
+after the decimal point should the rounding be done for. We could have
+called the function without named arguments (like in the second line
+above) but then we would need to provide all the arguments in the exact
+order needed. As it is easy to mix-up the order, it is recommended that
+named arguments are used when multiple arguments are passed to a
+function.
+
+The third line in the code above shows what happens when an optional
+argument is not provided to a function. As we have not specified the
+number of digits, the function uses the default value of the argument
+(which happens to be \texttt{0} in this case). As a result, the
+functions rounds the number to an integer.
+
+Your R is only as good as your R Packages - so lets figure that first
+how to install a package - you can do through RStudio GUI - or use the
+command below. Note the quote marks around the package name - which,
+like most other things in R, are case sensitive.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{install.packages}\NormalTok{(}\StringTok{"ggplot2"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+Installing is only the first step - that brings the package to your
+local machine but does not load it into the current R session. To do so,
+you can use the \textbf{\texttt{library}} command. You can use the
+\textbf{\texttt{detach}} commans to unload a package from the current R
+session. There are several thousand packages in R - waiting for us to
+explore
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{library}\NormalTok{(ggplot2)}
+\KeywordTok{detach}\NormalTok{(package}\OperatorTok{:}\NormalTok{ggplot2)}
+\end{Highlighting}
+\end{Shaded}
+
+You typically work in a directory during a R session. You can find
+current working directory or set working directory to a directory of
+your choice. When setting working directory to the desired location, in
+Windows use \texttt{/} or \texttt{\textbackslash{}\textbackslash{}}
+instead of \texttt{\textbackslash{}} character as the separator
+character.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{getwd}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "/Users/sankum/Box Sync/2Teaching/AABookDown"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{#setwd("Enter Directory Addess Here")}
+\end{Highlighting}
+\end{Shaded}
+
+You usually have a *\textbf{home directory} defined for your R
+installation. When you start R, your R session will usually start in
+this home directory. Home directory is usually referred using the
+\texttt{\textasciitilde{}} character. You can find out the directory
+assigned the \textbf{Home} status using the command
+\texttt{path.expand}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{path.expand}\NormalTok{(}\StringTok{"~"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "/Users/sankum"
+\end{verbatim}
+
+First thing - how to get help when you need it. For example: What the
+hell is a Vector?
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{#Output supressed for brevity}
+\KeywordTok{help}\NormalTok{(}\StringTok{"vector"}\NormalTok{) }\CommentTok{#default approach, note the quote marks}
+\NormalTok{?}\StringTok{"vector"} \CommentTok{#or this simple command works too}
+\KeywordTok{example}\NormalTok{(}\StringTok{"barplot"}\NormalTok{) }\CommentTok{#You can also look up examples}
+\end{Highlighting}
+\end{Shaded}
+
+As you work with R, you will create Objects. You can get a list of
+current objects using the \texttt{objects} command. You can delete
+objects using the \texttt{rm} command (rm is short for remove). BTW -
+Check of Environment Tab in RStudio - you can see that R/RStudio is
+keeping track of your objects and their values
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{objects}\NormalTok{() }\CommentTok{#Lists all the objects}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##  [1] "day.name"       "grades"         "message"       
+##  [4] "numvalue"       "revenue"        "sleep.per.day" 
+##  [7] "someday"        "wed.hours"      "work.and.sleep"
+## [10] "work.per.day"   "x"              "y"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{#Don't like a cluttered workspace, delete all objects by}
+\KeywordTok{rm}\NormalTok{(}\DataTypeTok{list =} \KeywordTok{ls}\NormalTok{())  }\CommentTok{#ls() gives a list of all the objects}
+\end{Highlighting}
+\end{Shaded}
+
+When you are done with your current R session, you can quit using the
+\texttt{q} command. You should save your current session first though.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{#Commands only for demo, not evaluated.}
+\KeywordTok{save.image}\NormalTok{(}\DataTypeTok{file =} \StringTok{"FileName.RData"}\NormalTok{)}
+\KeywordTok{q}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
 
 \cleardoublepage 
 

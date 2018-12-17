@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Advanced Big Data Analytics for Business with R</title>
+  <meta name="description" content="A book to support Big Data classes by Sanjeev Kumar at Ross School of Business, Univ of Michigan.">
+  <meta name="generator" content="bookdown 0.5 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Advanced Big Data Analytics for Business with R" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="A book to support Big Data classes by Sanjeev Kumar at Ross School of Business, Univ of Michigan." />
+  <meta name="github-repo" content="ateachr/ABDA4BwR" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Advanced Big Data Analytics for Business with R" />
+  
+  <meta name="twitter:description" content="A book to support Big Data classes by Sanjeev Kumar at Ross School of Business, Univ of Michigan." />
+  
+
+<meta name="author" content="Sanjeev Kumar">
+
+
+<meta name="date" content="2018-12-17">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="our-tools-r-rstudio.html">
+<link rel="next" href="syllabi.html">
+<script src="libs/jquery/jquery.min.js"></script>
+<link href="libs/gitbook/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="css/style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./index.html">Advanced Big Data Analytics</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Go Blue!</a></li>
+<li class="chapter" data-level="" data-path="preface.html"><a href="preface.html"><i class="fa fa-check"></i>Preface</a><ul>
+<li class="chapter" data-level="" data-path="preface.html"><a href="preface.html#who-is-this-book-for"><i class="fa fa-check"></i>Who Is This Book For?</a></li>
+<li class="chapter" data-level="" data-path="preface.html"><a href="preface.html#about-this-document"><i class="fa fa-check"></i>About This Document</a></li>
+<li class="chapter" data-level="" data-path="preface.html"><a href="preface.html#how-is-this-book-structured"><i class="fa fa-check"></i>How is This Book Structured</a><ul>
+<li class="chapter" data-level="" data-path="preface.html"><a href="preface.html#part-i-getting-started"><i class="fa fa-check"></i>Part I: Getting Started</a></li>
+<li class="chapter" data-level="" data-path="preface.html"><a href="preface.html#part-ii-data-exploration-and-visualization"><i class="fa fa-check"></i>Part II: Data Exploration and Visualization</a></li>
+<li class="chapter" data-level="" data-path="preface.html"><a href="preface.html#part-iii-traditional-statistical-modeling"><i class="fa fa-check"></i>Part III: Traditional Statistical Modeling</a></li>
+<li class="chapter" data-level="" data-path="preface.html"><a href="preface.html#part-iv-machine-learning-and-predictive-analytics"><i class="fa fa-check"></i>Part IV: Machine Learning and Predictive Analytics</a></li>
+<li class="chapter" data-level="" data-path="preface.html"><a href="preface.html#part-v-putting-it-all-together"><i class="fa fa-check"></i>Part V: Putting It All Together</a></li>
+<li class="chapter" data-level="" data-path="preface.html"><a href="preface.html#part-vi-appendices-bibliography-and-index"><i class="fa fa-check"></i>Part VI: Appendices, Bibliography and Index</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="preface.html"><a href="preface.html#how-to-read-this-book"><i class="fa fa-check"></i>How to Read This Book</a></li>
+<li class="chapter" data-level="" data-path="preface.html"><a href="preface.html#is-this-book-suitable-for-you"><i class="fa fa-check"></i>Is This Book Suitable For You?</a></li>
+<li class="chapter" data-level="" data-path="preface.html"><a href="preface.html#acknowledgments"><i class="fa fa-check"></i>Acknowledgments</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="about-the-author.html"><a href="about-the-author.html"><i class="fa fa-check"></i>About the Author</a></li>
+<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a><ul>
+<li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html#archive---delete"><i class="fa fa-check"></i><b>1.1</b> Archive - Delete</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="advanced-big-data-analytics.html"><a href="advanced-big-data-analytics.html"><i class="fa fa-check"></i><b>2</b> Advanced Big Data Analytics</a></li>
+<li class="chapter" data-level="3" data-path="our-tools-r-rstudio.html"><a href="our-tools-r-rstudio.html"><i class="fa fa-check"></i><b>3</b> Our Tools: R, RStudio</a><ul>
+<li class="chapter" data-level="3.1" data-path="our-tools-r-rstudio.html"><a href="our-tools-r-rstudio.html#introduction-to-r-and-rstudio"><i class="fa fa-check"></i><b>3.1</b> Introduction to R and RStudio</a><ul>
+<li class="chapter" data-level="3.1.1" data-path="our-tools-r-rstudio.html"><a href="our-tools-r-rstudio.html#download-and-install-r-and-rstudio"><i class="fa fa-check"></i><b>3.1.1</b> Download and Install R and RStudio</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="our-tools-r-rstudio.html"><a href="our-tools-r-rstudio.html#useful-features-of-rstudio"><i class="fa fa-check"></i><b>3.2</b> Useful Features of RStudio</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="our-tools-r-rstudio.html"><a href="our-tools-r-rstudio.html#console"><i class="fa fa-check"></i><b>3.2.1</b> Console</a></li>
+<li class="chapter" data-level="3.2.2" data-path="our-tools-r-rstudio.html"><a href="our-tools-r-rstudio.html#editor"><i class="fa fa-check"></i><b>3.2.2</b> Editor</a></li>
+<li class="chapter" data-level="3.2.3" data-path="our-tools-r-rstudio.html"><a href="our-tools-r-rstudio.html#environment"><i class="fa fa-check"></i><b>3.2.3</b> Environment</a></li>
+<li class="chapter" data-level="3.2.4" data-path="our-tools-r-rstudio.html"><a href="our-tools-r-rstudio.html#history"><i class="fa fa-check"></i><b>3.2.4</b> History</a></li>
+<li class="chapter" data-level="3.2.5" data-path="our-tools-r-rstudio.html"><a href="our-tools-r-rstudio.html#files"><i class="fa fa-check"></i><b>3.2.5</b> Files</a></li>
+<li class="chapter" data-level="3.2.6" data-path="our-tools-r-rstudio.html"><a href="our-tools-r-rstudio.html#plots"><i class="fa fa-check"></i><b>3.2.6</b> Plots</a></li>
+<li class="chapter" data-level="3.2.7" data-path="our-tools-r-rstudio.html"><a href="our-tools-r-rstudio.html#packages"><i class="fa fa-check"></i><b>3.2.7</b> Packages</a></li>
+<li class="chapter" data-level="3.2.8" data-path="our-tools-r-rstudio.html"><a href="our-tools-r-rstudio.html#help"><i class="fa fa-check"></i><b>3.2.8</b> Help</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="our-tools-r-rstudio.html"><a href="our-tools-r-rstudio.html#helpful-menu-items-and-keyboard-shortcuts"><i class="fa fa-check"></i><b>3.3</b> Helpful Menu Items and Keyboard Shortcuts</a></li>
+<li class="chapter" data-level="3.4" data-path="our-tools-r-rstudio.html"><a href="our-tools-r-rstudio.html#essential-r-tips-and-tricks"><i class="fa fa-check"></i><b>3.4</b> Essential R Tips and Tricks</a><ul>
+<li class="chapter" data-level="3.4.1" data-path="our-tools-r-rstudio.html"><a href="our-tools-r-rstudio.html#r-is-case-specific-and-space-neutral"><i class="fa fa-check"></i><b>3.4.1</b> R is Case Specific and Space Neutral</a></li>
+<li class="chapter" data-level="3.4.2" data-path="our-tools-r-rstudio.html"><a href="our-tools-r-rstudio.html#comments-and-line-continuation"><i class="fa fa-check"></i><b>3.4.2</b> Comments and Line Continuation</a></li>
+<li class="chapter" data-level="3.4.3" data-path="our-tools-r-rstudio.html"><a href="our-tools-r-rstudio.html#naming-conventions"><i class="fa fa-check"></i><b>3.4.3</b> Naming Conventions</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="our-tools-r-rstudio.html"><a href="our-tools-r-rstudio.html#rmarkdown-rmd-files"><i class="fa fa-check"></i><b>3.5</b> RMarkdown (RMD) Files</a></li>
+<li class="chapter" data-level="3.6" data-path="our-tools-r-rstudio.html"><a href="our-tools-r-rstudio.html#embedding-r-code-blocks-in-rmd-files"><i class="fa fa-check"></i><b>3.6</b> Embedding R Code Blocks in RMD Files</a><ul>
+<li class="chapter" data-level="3.6.1" data-path="our-tools-r-rstudio.html"><a href="our-tools-r-rstudio.html#embedding-options"><i class="fa fa-check"></i><b>3.6.1</b> Embedding Options</a></li>
+<li class="chapter" data-level="3.6.2" data-path="our-tools-r-rstudio.html"><a href="our-tools-r-rstudio.html#embedding-code-blocks-of-other-languages"><i class="fa fa-check"></i><b>3.6.2</b> Embedding Code Blocks of Other Languages</a></li>
+<li class="chapter" data-level="3.6.3" data-path="our-tools-r-rstudio.html"><a href="our-tools-r-rstudio.html#embedding-in-line-r-code"><i class="fa fa-check"></i><b>3.6.3</b> Embedding in-line R Code</a></li>
+<li class="chapter" data-level="3.6.4" data-path="our-tools-r-rstudio.html"><a href="our-tools-r-rstudio.html#reproducibility-of-data-analysis"><i class="fa fa-check"></i><b>3.6.4</b> Reproducibility of Data Analysis</a></li>
+</ul></li>
+<li class="chapter" data-level="3.7" data-path="our-tools-r-rstudio.html"><a href="our-tools-r-rstudio.html#key-features-of-rrstudio-ecosystem"><i class="fa fa-check"></i><b>3.7</b> Key Features of R/RStudio Ecosystem</a><ul>
+<li class="chapter" data-level="3.7.1" data-path="our-tools-r-rstudio.html"><a href="our-tools-r-rstudio.html#open-source-software"><i class="fa fa-check"></i><b>3.7.1</b> Open Source Software</a></li>
+<li class="chapter" data-level="3.7.2" data-path="our-tools-r-rstudio.html"><a href="our-tools-r-rstudio.html#extensability-of-r"><i class="fa fa-check"></i><b>3.7.2</b> Extensability of R</a></li>
+<li class="chapter" data-level="3.7.3" data-path="our-tools-r-rstudio.html"><a href="our-tools-r-rstudio.html#usability-of-r"><i class="fa fa-check"></i><b>3.7.3</b> Usability of R</a></li>
+<li class="chapter" data-level="3.7.4" data-path="our-tools-r-rstudio.html"><a href="our-tools-r-rstudio.html#r-is-not-verbose"><i class="fa fa-check"></i><b>3.7.4</b> R is NOT Verbose</a></li>
+<li class="chapter" data-level="3.7.5" data-path="our-tools-r-rstudio.html"><a href="our-tools-r-rstudio.html#object-oriented-programming"><i class="fa fa-check"></i><b>3.7.5</b> Object Oriented Programming</a></li>
+<li class="chapter" data-level="3.7.6" data-path="our-tools-r-rstudio.html"><a href="our-tools-r-rstudio.html#r-communitys-sense-of-humor"><i class="fa fa-check"></i><b>3.7.6</b> R Community’s Sense of Humor</a></li>
+</ul></li>
+<li class="chapter" data-level="3.8" data-path="our-tools-r-rstudio.html"><a href="our-tools-r-rstudio.html#common-issues-pitfalls-bugs-obstacles-and-their-solutions"><i class="fa fa-check"></i><b>3.8</b> Common Issues, Pitfalls, Bugs, Obstacles and Their Solutions</a><ul>
+<li class="chapter" data-level="3.8.1" data-path="our-tools-r-rstudio.html"><a href="our-tools-r-rstudio.html#i-have-an-older-r-installtion.-how-do-i-upgrade-it"><i class="fa fa-check"></i><b>3.8.1</b> I have an older R installtion. How do I upgrade it?</a></li>
+<li class="chapter" data-level="3.8.2" data-path="our-tools-r-rstudio.html"><a href="our-tools-r-rstudio.html#help---i-am-not-being-able-to-install-any-packages"><i class="fa fa-check"></i><b>3.8.2</b> Help - I am not being able to install any packages!</a></li>
+<li class="chapter" data-level="3.8.3" data-path="our-tools-r-rstudio.html"><a href="our-tools-r-rstudio.html#why-is-the-edit-command-not-working-for-me"><i class="fa fa-check"></i><b>3.8.3</b> Why is the edit command not working for me?</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="essential-r-language-elements.html"><a href="essential-r-language-elements.html"><i class="fa fa-check"></i><b>4</b> Essential R Language Elements</a><ul>
+<li class="chapter" data-level="4.1" data-path="essential-r-language-elements.html"><a href="essential-r-language-elements.html#doing-calculations---arithmatic-operators"><i class="fa fa-check"></i><b>4.1</b> Doing Calculations - Arithmatic Operators</a></li>
+<li class="chapter" data-level="4.2" data-path="essential-r-language-elements.html"><a href="essential-r-language-elements.html#logical-operators"><i class="fa fa-check"></i><b>4.2</b> Logical Operators</a></li>
+<li class="chapter" data-level="4.3" data-path="essential-r-language-elements.html"><a href="essential-r-language-elements.html#variables"><i class="fa fa-check"></i><b>4.3</b> Variables</a></li>
+<li class="chapter" data-level="4.4" data-path="essential-r-language-elements.html"><a href="essential-r-language-elements.html#variable-data-types"><i class="fa fa-check"></i><b>4.4</b> Variable Data Types</a><ul>
+<li class="chapter" data-level="4.4.1" data-path="essential-r-language-elements.html"><a href="essential-r-language-elements.html#numeric-data"><i class="fa fa-check"></i><b>4.4.1</b> Numeric Data</a></li>
+<li class="chapter" data-level="4.4.2" data-path="essential-r-language-elements.html"><a href="essential-r-language-elements.html#string-data"><i class="fa fa-check"></i><b>4.4.2</b> String Data</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="essential-r-language-elements.html"><a href="essential-r-language-elements.html#logical-data"><i class="fa fa-check"></i><b>4.5</b> Logical Data</a></li>
+<li class="chapter" data-level="4.6" data-path="essential-r-language-elements.html"><a href="essential-r-language-elements.html#converting-between-data-types"><i class="fa fa-check"></i><b>4.6</b> Converting Between Data Types</a></li>
+<li class="chapter" data-level="4.7" data-path="essential-r-language-elements.html"><a href="essential-r-language-elements.html#vectors"><i class="fa fa-check"></i><b>4.7</b> Vectors</a></li>
+<li class="chapter" data-level="4.8" data-path="essential-r-language-elements.html"><a href="essential-r-language-elements.html#factors"><i class="fa fa-check"></i><b>4.8</b> Factors</a></li>
+<li class="chapter" data-level="4.9" data-path="essential-r-language-elements.html"><a href="essential-r-language-elements.html#using-built-in-functions"><i class="fa fa-check"></i><b>4.9</b> Using Built-In Functions</a></li>
+</ul></li>
+<li class="appendix"><span><b>Appendix</b></span></li>
+<li class="chapter" data-level="A" data-path="syllabi.html"><a href="syllabi.html"><i class="fa fa-check"></i><b>A</b> Syllabi</a><ul>
+<li class="chapter" data-level="A.1" data-path="syllabi.html"><a href="syllabi.html#to404-big-data-manipulation-and-visualization"><i class="fa fa-check"></i><b>A.1</b> TO404 Big Data Manipulation and Visualization</a></li>
+<li class="chapter" data-level="A.2" data-path="syllabi.html"><a href="syllabi.html#to414-advanced-analytics"><i class="fa fa-check"></i><b>A.2</b> TO414 Advanced Analytics</a></li>
+<li class="chapter" data-level="A.3" data-path="syllabi.html"><a href="syllabi.html#to628-advanced-big-data-analytics"><i class="fa fa-check"></i><b>A.3</b> TO628 Advanced Big Data Analytics</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://bookdown.org" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Advanced Big Data Analytics for Business with R</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="essential-r-language-elements" class="section level1">
+<h1><span class="header-section-number">Chapter 4</span> Essential R Language Elements</h1>
+<p>In this chapter we will start playing with some basic R functionalities and start getting comfortable with typing commands in the R console. All code examples you see in the chapter are opportunities for you to type them in R Console yourself and see whether you get the same output. There is no better way to find your way around R than to get your hands dirty - and no better time than now. So lets get started.</p>
+<div id="doing-calculations---arithmatic-operators" class="section level2">
+<h2><span class="header-section-number">4.1</span> Doing Calculations - Arithmatic Operators</h2>
+<p>You can use R as a glorified calculator. All arithmatic calculations can be easily performed using Arithmatic Operators like <code>+</code> (addition), <code>-</code> (subtraction), <code>*</code> (multiplication), <code>/</code> (division) and <code>^</code> (exponent).</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="dv">10</span>  <span class="op">+</span><span class="st">    </span><span class="dv">20</span>  <span class="co">#As you can see - spaces don&#39;t matter, mostly.</span></code></pre></div>
+<pre><code>## [1] 30</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="dv">20</span><span class="op">/</span><span class="dv">3</span> <span class="co">#Note the nunber of digits after decimal</span></code></pre></div>
+<pre><code>## [1] 6.667</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="dv">16</span> <span class="op">^</span><span class="st"> </span><span class="fl">0.5</span>  <span class="co"># Usual Arithmatic Operators: +, -, * , /, ^</span></code></pre></div>
+<pre><code>## [1] 4</code></pre>
+<p>You would note that the outputs to the commands have this <code>[1]</code> before them. The number indicates how many values there are in the output. Since each of the commands above lead to a single output value - you see the <code>[1]</code> there before the output.</p>
+<p>When you have complicated Arithmatic Expressions, R follows usual Arithmatic Operator Precedance: Brackets, Exponent, Division and Multiplication, Addition and Subtraction - in that order. Go Left to Right for the same precedance. Of course it is preferable to put in enough paratheses so that you are not relying on R’s operator precedance for accurate execution of your commands.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="dv">5</span> <span class="op">+</span><span class="st"> </span><span class="dv">8</span> <span class="op">/</span><span class="st"> </span><span class="dv">2</span> <span class="op">*</span><span class="st"> </span><span class="dv">4</span> <span class="op">-</span><span class="st"> </span><span class="dv">3</span> <span class="co"># First * then / then + then - </span></code></pre></div>
+<pre><code>## [1] 18</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># You should include enough parantheses</span>
+(<span class="dv">5</span> <span class="op">+</span><span class="st"> </span><span class="dv">8</span>) <span class="op">/</span>((<span class="dv">2</span> <span class="op">*</span><span class="st"> </span><span class="dv">4</span>) <span class="op">-</span><span class="st"> </span><span class="dv">3</span>)</code></pre></div>
+<pre><code>## [1] 2.6</code></pre>
+<p>Two arithmatic operators that many are not familiar with are: Integer Division and Remainder operators. The Integer Division operator: <code>%/%</code>, provides just the quotient for a division operation while the remainder operator: <code>%%</code>, provides just the remainder for a division operation.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="dv">10</span> <span class="op">%/%</span><span class="st"> </span><span class="dv">3</span> <span class="co"># Integer division - only gives the quotient as the output</span></code></pre></div>
+<pre><code>## [1] 3</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="dv">10</span> <span class="op">%%</span><span class="st"> </span><span class="dv">3</span> <span class="co"># The counterpart to %/%, gives remainder as the output</span></code></pre></div>
+<pre><code>## [1] 1</code></pre>
+</div>
+<div id="logical-operators" class="section level2">
+<h2><span class="header-section-number">4.2</span> Logical Operators</h2>
+<p>Just as arithmatic expressions evaluate to a numerical result, logical expressions evaluate to a logical result - either <code>TRUE</code> or <code>FALSE</code>. Note the upper case format for the two keywords. The letters <code>T</code> and <code>F</code> are also acceptable values as shorthand for <code>TRUE</code> and <code>FALSE</code>. Logical expressions can be created using Logical Operators: equal to (<code>==</code>), greate than (<code>&gt;</code>), less than (<code>&lt;</code>), greater than or equal to (<code>&gt;=</code>), less than or equal to (<code>&lt;=</code>) and finally, not equal to (<code>!=</code>).</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="dv">10</span> <span class="op">&gt;</span><span class="st"> </span><span class="dv">20</span> <span class="co">#Should evaluate to FALSE</span></code></pre></div>
+<pre><code>## [1] FALSE</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="fl">12.37</span> <span class="op">&lt;=</span><span class="st"> </span><span class="fl">23.66</span> <span class="co">#Should evaluate to TRUE</span></code></pre></div>
+<pre><code>## [1] TRUE</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">(<span class="dv">10</span><span class="op">/</span><span class="dv">3</span>) <span class="op">==</span><span class="st"> </span>(<span class="dv">30</span><span class="op">/</span><span class="dv">9</span>) <span class="co">#Should evaluate to TRUE</span></code></pre></div>
+<pre><code>## [1] TRUE</code></pre>
+<p>Logical values can be combined using <code>AND</code> and <code>OR</code> constructs. When combining two logical values using <code>OR</code>, the resulting value is <code>TRUE</code> if any of the two values are <code>TRUE</code>. When combining two logical values using <code>AND</code>, the resulting value is <code>TRUE</code> only of both the values are <code>TRUE</code>. The command for <code>AND</code> is <code>&amp;</code> while the command for <code>OR</code> is the <code>|</code> character.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">(<span class="dv">10</span> <span class="op">&gt;</span><span class="st"> </span><span class="dv">20</span>) <span class="op">|</span><span class="st"> </span>(<span class="fl">12.37</span> <span class="op">&lt;=</span><span class="st"> </span><span class="fl">23.66</span>) <span class="co">#Should evaluate to TRUE</span></code></pre></div>
+<pre><code>## [1] TRUE</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">(<span class="dv">10</span> <span class="op">&gt;</span><span class="st"> </span><span class="dv">20</span>) <span class="op">&amp;</span><span class="st"> </span>(<span class="fl">12.37</span> <span class="op">&lt;=</span><span class="st"> </span><span class="fl">23.66</span>) <span class="co">#Should evaluate to FALSE</span></code></pre></div>
+<pre><code>## [1] FALSE</code></pre>
+<p>You can use the <code>NOT</code> operator to convert a <code>TRUE</code> value to <code>FALSE</code> and vice versa - the corresponding command is the <code>!</code> character. You can use logical operators to compare non-numeric values as well.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">!</span><span class="ot">TRUE</span> <span class="co">#Should evaluate to FALSE</span></code></pre></div>
+<pre><code>## [1] FALSE</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="st">&quot;Dog&quot;</span> <span class="op">&gt;</span><span class="st"> &quot;Cat&quot;</span> <span class="co">#As everybody know, this is TRUE</span></code></pre></div>
+<pre><code>## [1] TRUE</code></pre>
+<p>As the example above shows, comparing non-numeric values can result in interesting results.<a href="#fn4" class="footnoteRef" id="fnref4"><sup>4</sup></a> When two strings are compared, they are essentially compared one character at a time. In the example above, the character C is compared with character D. The comparison is based on the Unicode number associated with the characters. As D has a higher Unicode number than C, “Dog” is considered higher than “Cat”. Interesting thought experiment: 1000 &gt; 50: True or False? “1000” &gt; “50”: True or False?</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="dv">1000</span> <span class="op">&gt;</span><span class="st"> </span><span class="dv">50</span></code></pre></div>
+<pre><code>## [1] TRUE</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="st">&quot;1000&quot;</span> <span class="op">&gt;</span><span class="st"> &quot;50&quot;</span></code></pre></div>
+<pre><code>## [1] FALSE</code></pre>
+</div>
+<div id="variables" class="section level2">
+<h2><span class="header-section-number">4.3</span> Variables</h2>
+<p>R keeps all data in <strong>Variables</strong>. Variables can be thought of as a space in computer’s memory where R can store data. Once we have created a variable, we can then use the variable name to access, manipulate and work with the data kept in the variable. Variables are created using the <strong>Assignment Operator</strong> written as <code>&lt;-</code>. The arrow indicates the direction of assignment. Operators also exist to do assignment in the opposite direction <code>-&gt;</code> and do the same operation as assignment operator. R also supports the assignment operator command used by many other programming languages <code>=</code>, but it is customary to use the right-to-left version of assignment operator.<a href="#fn5" class="footnoteRef" id="fnref5"><sup>5</sup></a></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">revenue &lt;-<span class="st"> </span><span class="dv">100</span> <span class="co">#Typical way of creating a variable and assigning value</span>
+<span class="co"># Above is the recommended approach</span>
+revenue =<span class="st"> </span><span class="dv">100</span> <span class="co">#Alternate way of doing same as above</span>
+<span class="co">#100 -&gt; revenue #Reverse direction assignment</span>
+revenue &lt;-<span class="st"> </span>revenue <span class="op">+</span><span class="st"> </span><span class="dv">300</span> <span class="co">#Performing calculations</span>
+<span class="kw">print</span>(revenue) <span class="co">#Printing/showing the value inside the variable</span></code></pre></div>
+<pre><code>## [1] 400</code></pre>
+<p>The first three line of the code above should be read as the value 100 is assigned to the variable <code>revenue</code>. In the fourth line, we add 300 to the current value of variable <code>revenue</code> and the resulting value (in this case 400) is then assigned to the variable <code>revenue</code>. So the value in the variable <code>revenue</code> is now 400, which is shown as output in the last line.</p>
+<p>A numeric variable like <code>revenue</code> above can be used just like a number to perform all usual arithmetic operations.</p>
+</div>
+<div id="variable-data-types" class="section level2">
+<h2><span class="header-section-number">4.4</span> Variable Data Types</h2>
+<p>Variables can store different types of data. We saw integer numerical data in the examples above. Other common data types include floating point numbers (fractional numbers), characters data (i.e. a single character), text data (called strings - as in string of characters) and logical data (true or false). We can find the data type of a variable by using the <code>class</code> command.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">numvalue &lt;-<span class="st"> </span><span class="fl">20.56</span> <span class="co">#Creating a numeric variable</span>
+<span class="kw">class</span>(numvalue) <span class="co">#Finding data type of numvalue variable</span></code></pre></div>
+<pre><code>## [1] &quot;numeric&quot;</code></pre>
+<div id="numeric-data" class="section level3">
+<h3><span class="header-section-number">4.4.1</span> Numeric Data</h3>
+<p>Variables of numeric data type can store both integers and floating point values. Unlike many programming languages, R does not have various different kinds of integers and floating point numbers defined to optimize memory usage.</p>
+</div>
+<div id="string-data" class="section level3">
+<h3><span class="header-section-number">4.4.2</span> String Data</h3>
+<p><strong>String</strong> or text data<a href="#fn6" class="footnoteRef" id="fnref6"><sup>6</sup></a> is written within quote marks <code>&quot; &quot;</code> to differentiate them from text that represent things like object names. An empty string (a text data with no characters) is usually represented by two quote marks with nothing within - like <code>&quot;&quot;</code>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">day.name &lt;-<span class="st"> &quot;Sunday&quot;</span> <span class="co">#Assigns the string Sunday to variable day.name</span>
+someday &lt;-<span class="st"> &quot;&quot;</span> <span class="co">#Empty string assigned to variable someday</span></code></pre></div>
+<p>String is a very useful data type as all other types of data can be saved as a string. For example - we can save numeric data (“23.37”), date data (“12/27/1976”), logical data (“TRUE”) etc. all as string. R has several useful commands for working with string data. You can connect two strings together using the <strong>String Concatenation</strong> function <strong><code>paste</code></strong>. You can calculate the number of characters in a string using the <strong><code>nchar</code></strong> function. Many other strings related commands are discussed later in this book.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">nchar</span>(day.name); <span class="kw">nchar</span>(someday)</code></pre></div>
+<pre><code>## [1] 6</code></pre>
+<pre><code>## [1] 0</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">message &lt;-<span class="st"> </span><span class="kw">paste</span>(day.name, <span class="st">&quot; is a great day!&quot;</span>); message</code></pre></div>
+<pre><code>## [1] &quot;Sunday  is a great day!&quot;</code></pre>
+</div>
+</div>
+<div id="logical-data" class="section level2">
+<h2><span class="header-section-number">4.5</span> Logical Data</h2>
+<p>Variables can hold logical values using the two keywords <code>TRUE</code> and <code>FALSE</code>. Logical values typically result from the use of logical operators such as the equality operator <code>==</code>. Note the two <code>=</code> signs there which differetiates it from the version of assignment operator we saw before.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="dv">4</span> <span class="op">==</span><span class="st"> </span><span class="dv">6</span> <span class="co">#Is 4 equal to 6, result FALSE</span></code></pre></div>
+<pre><code>## [1] FALSE</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">someday <span class="op">==</span><span class="st"> &quot;Tuesday&quot;</span> <span class="co">#Again result shoukd be FALSE</span></code></pre></div>
+<pre><code>## [1] FALSE</code></pre>
+</div>
+<div id="converting-between-data-types" class="section level2">
+<h2><span class="header-section-number">4.6</span> Converting Between Data Types</h2>
+<p>Its easy to convert variables from one data type to another. Conversion functions usually take the form of <strong><code>as.xxx</code></strong> where <code>xxx</code> is the desired datatype. For example: <code>as.string</code> converts to a String, <code>as.numeric</code> converts to a numeric data type and so on.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x &lt;-<span class="st"> &quot;12.36&quot;</span> <span class="co">#Creating a String variable</span>
+y &lt;-<span class="st"> </span><span class="kw">as.numeric</span>(x); y <span class="co">#Converting to a numeric value and displaying</span></code></pre></div>
+<pre><code>## [1] 12.36</code></pre>
+</div>
+<div id="vectors" class="section level2">
+<h2><span class="header-section-number">4.7</span> Vectors</h2>
+<p>Variables store a single value. If you need to store multiple values then you need a <strong><code>Vector</code></strong>. Vectors can be created in the same way a variables are created, except that we can assign multiple values to a vector. A handy function for combining multiple values in one vector is the <strong>combine</strong> function written as <code>c</code>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">grades &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="fl">3.2</span>, <span class="dv">3</span>,<span class="dv">1</span>, <span class="fl">2.7</span>, <span class="fl">3.9</span>, <span class="fl">4.0</span>) <span class="co">#Grades of five students</span>
+<span class="kw">class</span>(grades) <span class="co">#A vector with numeric values</span></code></pre></div>
+<pre><code>## [1] &quot;numeric&quot;</code></pre>
+<p>The code above created a vector named <code>grades</code> that has 5 elements. Vectors are very useful because R provides several easy ways to interact with different elements of a vector. We can access individual elements of a vector using the <code>[ ]</code> notation - called <strong>Logical Indexing</strong>. We can use the <strong><code>length</code></strong> function to find out how many elements there are in the vector.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">grades[<span class="dv">2</span>] <span class="co">#Gets the second element of the vector</span></code></pre></div>
+<pre><code>## [1] 3</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">grades[<span class="dv">4</span>] &lt;-<span class="st"> </span><span class="dv">3</span> <span class="co">#Changes 4th element of the vector to 3</span>
+<span class="kw">length</span>(grades) <span class="co">#Gets the length (number of elements) of the vector</span></code></pre></div>
+<pre><code>## [1] 6</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">grades <span class="op">-</span><span class="st"> </span><span class="fl">0.1</span> <span class="co">#Adds 2 to *each* element of the vector </span></code></pre></div>
+<pre><code>## [1] 3.1 2.9 0.9 2.9 3.8 3.9</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">grades <span class="co">#Displays current elements of the vector</span></code></pre></div>
+<pre><code>## [1] 3.2 3.0 1.0 3.0 3.9 4.0</code></pre>
+<p>Vectors are also useful for doing element-by-element calculations. For example, if we have another vector for number of hours of work for the week, we can calculate number of hours used for work and sleep as follows:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">work.per.day &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">9</span>, <span class="dv">11</span>, <span class="dv">10</span>, <span class="dv">8</span>, <span class="dv">6</span>, <span class="dv">3</span>, <span class="dv">2</span>) <span class="co">#Create new vector</span>
+sleep.per.day &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">4</span>, <span class="dv">10</span>, <span class="dv">8</span>, <span class="dv">7</span>, <span class="dv">11</span>)
+work.and.sleep &lt;-<span class="st"> </span>sleep.per.day <span class="op">+</span><span class="st"> </span>work.per.day 
+<span class="co">#Added two vectors element by element</span>
+<span class="kw">print</span>(work.and.sleep) <span class="co">#Show added values</span></code></pre></div>
+<pre><code>## [1] 15 18 14 18 14 10 13</code></pre>
+<p>It is easy to access data elements inside a vector. All elements are assigned an index number - unlike many programming languages, R starts counting with 1 rather than 0.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">wed.hours &lt;-<span class="st"> </span>work.per.day[<span class="dv">3</span>] <span class="co">#Extracts third element</span>
+work.per.day[<span class="dv">7</span>] &lt;-<span class="st"> </span><span class="dv">6</span> <span class="co">#Changes 7th element of the vector</span></code></pre></div>
+<p>Functions <code>edit</code> and <code>fix</code> can be used to edit existing vectors. Number of elements in a vector can be calculated using the <code>length</code> function.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">length</span>(work.per.day)</code></pre></div>
+<pre><code>## [1] 7</code></pre>
+</div>
+<div id="factors" class="section level2">
+<h2><span class="header-section-number">4.8</span> Factors</h2>
+</div>
+<div id="using-built-in-functions" class="section level2">
+<h2><span class="header-section-number">4.9</span> Using Built-In Functions</h2>
+<p>R includes many <strong>functions<em>}<strong>. Functions take some values as inputs (often called </strong>arguments<strong>), perform some calculation and return the result. For example <code>sqrt()</code>, the </strong>square root function</em>}</strong> takes a value and returns its square root.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sqrt</span>(<span class="dv">100</span>) <span class="co">#Calculate square root of 100</span></code></pre></div>
+<pre><code>## [1] 10</code></pre>
+<p>R includes perhaps thousands of functions for different tasks. Some functions can take several arguments with many of them being optional. Such optional arguments typically have a default value that is used in case a value is not provided for that argument. When supplying several arguments, it is a good practice to used **named arguments*}** as shown below.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#Calling functions with name arguments</span>
+<span class="kw">round</span>(<span class="dt">x =</span> <span class="fl">1.23456789</span>, <span class="dt">digits =</span> <span class="dv">4</span>) </code></pre></div>
+<pre><code>## [1] 1.235</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#Arguments passed in order, withour names</span>
+<span class="kw">round</span>(<span class="fl">1.23456789</span>, <span class="dv">4</span>)</code></pre></div>
+<pre><code>## [1] 1.235</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#Using default values for optional arguments</span>
+<span class="kw">round</span>(<span class="fl">1.23456789</span>) </code></pre></div>
+<pre><code>## [1] 1</code></pre>
+<p>The first line above shows running (or calling) the function <code>round</code> with explicitly named arguments. <code>x</code> represents the number to be rounded and <code>digits</code> represents how many digits after the decimal point should the rounding be done for. We could have called the function without named arguments (like in the second line above) but then we would need to provide all the arguments in the exact order needed. As it is easy to mix-up the order, it is recommended that named arguments are used when multiple arguments are passed to a function.</p>
+<p>The third line in the code above shows what happens when an optional argument is not provided to a function. As we have not specified the number of digits, the function uses the default value of the argument (which happens to be <code>0</code> in this case). As a result, the functions rounds the number to an integer.</p>
+<p>Your R is only as good as your R Packages - so lets figure that first how to install a package - you can do through RStudio GUI - or use the command below. Note the quote marks around the package name - which, like most other things in R, are case sensitive.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">install.packages</span>(<span class="st">&quot;ggplot2&quot;</span>)</code></pre></div>
+<p>Installing is only the first step - that brings the package to your local machine but does not load it into the current R session. To do so, you can use the <strong><code>library</code></strong> command. You can use the <strong><code>detach</code></strong> commans to unload a package from the current R session. There are several thousand packages in R - waiting for us to explore</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(ggplot2)
+<span class="kw">detach</span>(package<span class="op">:</span>ggplot2)</code></pre></div>
+<p>You typically work in a directory during a R session. You can find current working directory or set working directory to a directory of your choice. When setting working directory to the desired location, in Windows use <code>/</code> or <code>\\</code> instead of <code>\</code> character as the separator character.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">getwd</span>()</code></pre></div>
+<pre><code>## [1] &quot;/Users/sankum/Box Sync/2Teaching/AABookDown&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#setwd(&quot;Enter Directory Addess Here&quot;)</span></code></pre></div>
+<p>You usually have a *<strong>home directory</strong> defined for your R installation. When you start R, your R session will usually start in this home directory. Home directory is usually referred using the <code>~</code> character. You can find out the directory assigned the <strong>Home</strong> status using the command <code>path.expand</code>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">path.expand</span>(<span class="st">&quot;~&quot;</span>)</code></pre></div>
+<pre><code>## [1] &quot;/Users/sankum&quot;</code></pre>
+<p>First thing - how to get help when you need it. For example: What the hell is a Vector?</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#Output supressed for brevity</span>
+<span class="kw">help</span>(<span class="st">&quot;vector&quot;</span>) <span class="co">#default approach, note the quote marks</span>
+?<span class="st">&quot;vector&quot;</span> <span class="co">#or this simple command works too</span>
+<span class="kw">example</span>(<span class="st">&quot;barplot&quot;</span>) <span class="co">#You can also look up examples</span></code></pre></div>
+<p>As you work with R, you will create Objects. You can get a list of current objects using the <code>objects</code> command. You can delete objects using the <code>rm</code> command (rm is short for remove). BTW - Check of Environment Tab in RStudio - you can see that R/RStudio is keeping track of your objects and their values</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">objects</span>() <span class="co">#Lists all the objects</span></code></pre></div>
+<pre><code>##  [1] &quot;day.name&quot;       &quot;grades&quot;         &quot;message&quot;       
+##  [4] &quot;numvalue&quot;       &quot;revenue&quot;        &quot;sleep.per.day&quot; 
+##  [7] &quot;someday&quot;        &quot;wed.hours&quot;      &quot;work.and.sleep&quot;
+## [10] &quot;work.per.day&quot;   &quot;x&quot;              &quot;y&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#Don&#39;t like a cluttered workspace, delete all objects by</span>
+<span class="kw">rm</span>(<span class="dt">list =</span> <span class="kw">ls</span>())  <span class="co">#ls() gives a list of all the objects</span></code></pre></div>
+<p>When you are done with your current R session, you can quit using the <code>q</code> command. You should save your current session first though.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#Commands only for demo, not evaluated.</span>
+<span class="kw">save.image</span>(<span class="dt">file =</span> <span class="st">&quot;FileName.RData&quot;</span>)
+<span class="kw">q</span>()</code></pre></div>
+
+
+</div>
+</div>
+
+
+
+<div class="footnotes">
+<hr />
+<ol start="4">
+<li id="fn4"><p>We have not discussed different data types yet. Values enclosed in quote marks are text values, typically called Strings<a href="essential-r-language-elements.html#fnref4">↩</a></p></li>
+<li id="fn5"><p>I find the R version of assignment operator to be much more intuitive as the direction of value assignment is clearly specified. The <code>=</code> charater usually confuses beginners into thinking that we are “equating” values instead of the correct interpretation of “assigning” value from one side to the other.<a href="essential-r-language-elements.html#fnref5">↩</a></p></li>
+<li id="fn6"><p>Text is nothing but a string of characters, hence the name String<a href="essential-r-language-elements.html#fnref6">↩</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="our-tools-r-rstudio.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="syllabi.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook/js/app.min.js"></script>
+<script src="libs/gitbook/js/lunr.js"></script>
+<script src="libs/gitbook/js/plugin-search.js"></script>
+<script src="libs/gitbook/js/plugin-sharing.js"></script>
+<script src="libs/gitbook/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": true,
+"facebook": false,
+"twitter": true,
+"google": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/clarifyR/AABookDown/edit/master/04-Essential-R-Language.Rmd",
+"text": "Edit"
+},
+"download": ["bookdown.pdf"],
+"toc": {
+"collapse": "none"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

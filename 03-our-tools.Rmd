@@ -83,10 +83,10 @@ The Packages tab shows you a list of all the packages installed on your system a
 
 As the name suggests, the Help tab can be used to find Help documentation on specific keywords. You can search for a keyword in the search field for looking at corresponding help documentation. If you write a help command in the console, then the output of that will also show in the Help tab. For example, if you type the command below (looking for help on "help"), you will get the help documentation as shown in figure below.
 
-```{r}
+```{r, eval=FALSE}
 help("help")
 ```
-```{r, fig.cap="Helo Window on 'Help'", out.width='50%', fig.align='center', echo=FALSE}
+```{r, fig.cap="Helo Window on 'Help'", out.width='80%', fig.align='center', echo=FALSE}
 knitr::include_graphics("images/help.png")
 ```
 

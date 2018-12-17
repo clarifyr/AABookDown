@@ -25,7 +25,7 @@
 <meta name="author" content="Sanjeev Kumar">
 
 
-<meta name="date" content="2018-12-16">
+<meta name="date" content="2018-12-17">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -33,7 +33,7 @@
   
   
 <link rel="prev" href="advanced-big-data-analytics.html">
-<link rel="next" href="syllabi.html">
+<link rel="next" href="essential-r-language-elements.html">
 <script src="libs/jquery/jquery.min.js"></script>
 <link href="libs/gitbook/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook/css/plugin-bookdown.css" rel="stylesheet" />
@@ -165,6 +165,20 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="3.8.3" data-path="our-tools-r-rstudio.html"><a href="our-tools-r-rstudio.html#why-is-the-edit-command-not-working-for-me"><i class="fa fa-check"></i><b>3.8.3</b> Why is the edit command not working for me?</a></li>
 </ul></li>
 </ul></li>
+<li class="chapter" data-level="4" data-path="essential-r-language-elements.html"><a href="essential-r-language-elements.html"><i class="fa fa-check"></i><b>4</b> Essential R Language Elements</a><ul>
+<li class="chapter" data-level="4.1" data-path="essential-r-language-elements.html"><a href="essential-r-language-elements.html#doing-calculations---arithmatic-operators"><i class="fa fa-check"></i><b>4.1</b> Doing Calculations - Arithmatic Operators</a></li>
+<li class="chapter" data-level="4.2" data-path="essential-r-language-elements.html"><a href="essential-r-language-elements.html#logical-operators"><i class="fa fa-check"></i><b>4.2</b> Logical Operators</a></li>
+<li class="chapter" data-level="4.3" data-path="essential-r-language-elements.html"><a href="essential-r-language-elements.html#variables"><i class="fa fa-check"></i><b>4.3</b> Variables</a></li>
+<li class="chapter" data-level="4.4" data-path="essential-r-language-elements.html"><a href="essential-r-language-elements.html#variable-data-types"><i class="fa fa-check"></i><b>4.4</b> Variable Data Types</a><ul>
+<li class="chapter" data-level="4.4.1" data-path="essential-r-language-elements.html"><a href="essential-r-language-elements.html#numeric-data"><i class="fa fa-check"></i><b>4.4.1</b> Numeric Data</a></li>
+<li class="chapter" data-level="4.4.2" data-path="essential-r-language-elements.html"><a href="essential-r-language-elements.html#string-data"><i class="fa fa-check"></i><b>4.4.2</b> String Data</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="essential-r-language-elements.html"><a href="essential-r-language-elements.html#logical-data"><i class="fa fa-check"></i><b>4.5</b> Logical Data</a></li>
+<li class="chapter" data-level="4.6" data-path="essential-r-language-elements.html"><a href="essential-r-language-elements.html#converting-between-data-types"><i class="fa fa-check"></i><b>4.6</b> Converting Between Data Types</a></li>
+<li class="chapter" data-level="4.7" data-path="essential-r-language-elements.html"><a href="essential-r-language-elements.html#vectors"><i class="fa fa-check"></i><b>4.7</b> Vectors</a></li>
+<li class="chapter" data-level="4.8" data-path="essential-r-language-elements.html"><a href="essential-r-language-elements.html#factors"><i class="fa fa-check"></i><b>4.8</b> Factors</a></li>
+<li class="chapter" data-level="4.9" data-path="essential-r-language-elements.html"><a href="essential-r-language-elements.html#using-built-in-functions"><i class="fa fa-check"></i><b>4.9</b> Using Built-In Functions</a></li>
+</ul></li>
 <li class="appendix"><span><b>Appendix</b></span></li>
 <li class="chapter" data-level="A" data-path="syllabi.html"><a href="syllabi.html"><i class="fa fa-check"></i><b>A</b> Syllabi</a><ul>
 <li class="chapter" data-level="A.1" data-path="syllabi.html"><a href="syllabi.html#to404-big-data-manipulation-and-visualization"><i class="fa fa-check"></i><b>A.1</b> TO404 Big Data Manipulation and Visualization</a></li>
@@ -274,7 +288,7 @@ FIGURE 3.3: Plots Window with a Demo Plot
 <p>As the name suggests, the Help tab can be used to find Help documentation on specific keywords. You can search for a keyword in the search field for looking at corresponding help documentation. If you write a help command in the console, then the output of that will also show in the Help tab. For example, if you type the command below (looking for help on “help”), you will get the help documentation as shown in figure below.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">help</span>(<span class="st">&quot;help&quot;</span>)</code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-9"></span>
-<img src="images/help.png" alt="Helo Window on 'Help'" width="50%" />
+<img src="images/help.png" alt="Helo Window on 'Help'" width="80%" />
 <p class="caption">
 FIGURE 3.4: Helo Window on ‘Help’
 </p>
@@ -420,13 +434,9 @@ version <span class="co"># command for checking your current R version</span></c
 <h3><span class="header-section-number">3.8.3</span> Why is the edit command not working for me?</h3>
 <p>One of the first R commands that gives trouble is the <code>edit</code> command. As the name suggests, <code>edit</code> is used for editing data - typically it shows the data to be edited in a table format with editable cells. This specific command (and its cousin, the <code>fix</code> command) seems to be very sensitive to the keyboard layouts, especially on Apple machines. This problem is hardware oriented and may prove difficult to solve. I usually recommend to ignore these two commands and take care of your data editing needs using alternative methods. If you were using <code>edit</code> for only viewing the data, then <code>View</code> is a good alternative for that.</p>
 
-
 </div>
 </div>
 </div>
-
-
-
 <div class="footnotes">
 <hr />
 <ol start="1">
@@ -441,7 +451,7 @@ version <span class="co"># command for checking your current R version</span></c
         </div>
       </div>
 <a href="advanced-big-data-analytics.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="syllabi.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="essential-r-language-elements.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook/js/app.min.js"></script>
