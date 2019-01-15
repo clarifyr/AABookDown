@@ -1,6 +1,8 @@
 bookdown::gitbook:
+  toc_depth: 2
   css: css/style.css
   config:
+    toc_depth: 2
     toc:
       collapse: none
       before: |
