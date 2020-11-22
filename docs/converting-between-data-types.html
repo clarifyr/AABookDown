@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>A Syllabi | Advanced Analytics, Machine Learning and Artificial Intelligence</title>
+  <title>4.6 Converting Between Data Types | Advanced Analytics, Machine Learning and Artificial Intelligence</title>
   <meta name="description" content="A book to support AA, ML and AI classes by Sanjeev Kumar at Ross School of Business, Univ of Michigan." />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="A Syllabi | Advanced Analytics, Machine Learning and Artificial Intelligence" />
+  <meta property="og:title" content="4.6 Converting Between Data Types | Advanced Analytics, Machine Learning and Artificial Intelligence" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="clarifyr/ClarifyR" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="A Syllabi | Advanced Analytics, Machine Learning and Artificial Intelligence" />
+  <meta name="twitter:title" content="4.6 Converting Between Data Types | Advanced Analytics, Machine Learning and Artificial Intelligence" />
   
   <meta name="twitter:description" content="A book to support AA, ML and AI classes by Sanjeev Kumar at Ross School of Business, Univ of Michigan." />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="using-built-in-functions.html"/>
-<link rel="next" href="to404-big-data-manipulation-and-visualization.html"/>
+<link rel="prev" href="logical-data.html"/>
+<link rel="next" href="vectors.html"/>
 <script src="libs/jquery/jquery.min.js"></script>
 <link href="libs/gitbook/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook/css/plugin-table.css" rel="stylesheet" />
@@ -196,17 +196,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="syllabi" class="section level1">
-<h1><span class="header-section-number">A</span> Syllabi</h1>
-<p>This appendix will have the syllabus for the relevant Ross courses.</p>
+<div id="converting-between-data-types" class="section level2">
+<h2><span class="header-section-number">4.6</span> Converting Between Data Types</h2>
+<p>Its easy to convert variables from one data type to another. Conversion functions usually take the form of <strong><code>as.xxx</code></strong> where <code>xxx</code> is the desired datatype. For example: <code>as.string</code> converts to a String, <code>as.numeric</code> converts to a numeric data type and so on.</p>
+<div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb64-1" title="1">x &lt;-<span class="st"> &quot;12.36&quot;</span> <span class="co">#Creating a String variable</span></a>
+<a class="sourceLine" id="cb64-2" title="2">y &lt;-<span class="st"> </span><span class="kw">as.numeric</span>(x); y <span class="co">#Converting to a numeric value and displaying</span></a></code></pre></div>
+<pre><code>## [1] 12.36</code></pre>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="using-built-in-functions.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="to404-big-data-manipulation-and-visualization.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="logical-data.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="vectors.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook/js/app.min.js"></script>

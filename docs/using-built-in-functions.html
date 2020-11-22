@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>A Syllabi | Advanced Analytics, Machine Learning and Artificial Intelligence</title>
+  <title>4.9 Using Built-In Functions | Advanced Analytics, Machine Learning and Artificial Intelligence</title>
   <meta name="description" content="A book to support AA, ML and AI classes by Sanjeev Kumar at Ross School of Business, Univ of Michigan." />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="A Syllabi | Advanced Analytics, Machine Learning and Artificial Intelligence" />
+  <meta property="og:title" content="4.9 Using Built-In Functions | Advanced Analytics, Machine Learning and Artificial Intelligence" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="clarifyr/ClarifyR" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="A Syllabi | Advanced Analytics, Machine Learning and Artificial Intelligence" />
+  <meta name="twitter:title" content="4.9 Using Built-In Functions | Advanced Analytics, Machine Learning and Artificial Intelligence" />
   
   <meta name="twitter:description" content="A book to support AA, ML and AI classes by Sanjeev Kumar at Ross School of Business, Univ of Michigan." />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="using-built-in-functions.html"/>
-<link rel="next" href="to404-big-data-manipulation-and-visualization.html"/>
+<link rel="prev" href="factors.html"/>
+<link rel="next" href="syllabi.html"/>
 <script src="libs/jquery/jquery.min.js"></script>
 <link href="libs/gitbook/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook/css/plugin-table.css" rel="stylesheet" />
@@ -196,17 +196,68 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="syllabi" class="section level1">
-<h1><span class="header-section-number">A</span> Syllabi</h1>
-<p>This appendix will have the syllabus for the relevant Ross courses.</p>
+<div id="using-built-in-functions" class="section level2">
+<h2><span class="header-section-number">4.9</span> Using Built-In Functions</h2>
+<p>R includes many <strong>functions<em>}<strong>. Functions take some values as inputs (often called </strong>arguments<strong>), perform some calculation and return the result. For example <code>sqrt()</code>, the </strong>square root function</em>}</strong> takes a value and returns its square root.</p>
+<div class="sourceCode" id="cb81"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb81-1" title="1"><span class="kw">sqrt</span>(<span class="dv">100</span>) <span class="co">#Calculate square root of 100</span></a></code></pre></div>
+<pre><code>## [1] 10</code></pre>
+<p>R includes perhaps thousands of functions for different tasks. Some functions can take several arguments with many of them being optional. Such optional arguments typically have a default value that is used in case a value is not provided for that argument. When supplying several arguments, it is a good practice to used **named arguments*}** as shown below.</p>
+<div class="sourceCode" id="cb83"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb83-1" title="1"><span class="co">#Calling functions with name arguments</span></a>
+<a class="sourceLine" id="cb83-2" title="2"><span class="kw">round</span>(<span class="dt">x =</span> <span class="fl">1.23456789</span>, <span class="dt">digits =</span> <span class="dv">4</span>) </a></code></pre></div>
+<pre><code>## [1] 1.235</code></pre>
+<div class="sourceCode" id="cb85"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb85-1" title="1"><span class="co">#Arguments passed in order, withour names</span></a>
+<a class="sourceLine" id="cb85-2" title="2"><span class="kw">round</span>(<span class="fl">1.23456789</span>, <span class="dv">4</span>)</a></code></pre></div>
+<pre><code>## [1] 1.235</code></pre>
+<div class="sourceCode" id="cb87"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb87-1" title="1"><span class="co">#Using default values for optional arguments</span></a>
+<a class="sourceLine" id="cb87-2" title="2"><span class="kw">round</span>(<span class="fl">1.23456789</span>) </a></code></pre></div>
+<pre><code>## [1] 1</code></pre>
+<p>The first line above shows running (or calling) the function <code>round</code> with explicitly named arguments. <code>x</code> represents the number to be rounded and <code>digits</code> represents how many digits after the decimal point should the rounding be done for. We could have called the function without named arguments (like in the second line above) but then we would need to provide all the arguments in the exact order needed. As it is easy to mix-up the order, it is recommended that named arguments are used when multiple arguments are passed to a function.</p>
+<p>The third line in the code above shows what happens when an optional argument is not provided to a function. As we have not specified the number of digits, the function uses the default value of the argument (which happens to be <code>0</code> in this case). As a result, the functions rounds the number to an integer.</p>
+<p>Your R is only as good as your R Packages - so lets figure that first how to install a package - you can do through RStudio GUI - or use the command below. Note the quote marks around the package name - which, like most other things in R, are case sensitive.</p>
+<div class="sourceCode" id="cb89"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb89-1" title="1"><span class="kw">install.packages</span>(<span class="st">&quot;ggplot2&quot;</span>)</a></code></pre></div>
+<p>Installing is only the first step - that brings the package to your local machine but does not load it into the current R session. To do so, you can use the <strong><code>library</code></strong> command. You can use the <strong><code>detach</code></strong> commans to unload a package from the current R session. There are several thousand packages in R - waiting for us to explore</p>
+<div class="sourceCode" id="cb90"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb90-1" title="1"><span class="kw">library</span>(ggplot2)</a></code></pre></div>
+<pre><code>## Warning: package &#39;ggplot2&#39; was built under R version
+## 3.6.3</code></pre>
+<div class="sourceCode" id="cb92"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb92-1" title="1"><span class="kw">detach</span>(package<span class="op">:</span>ggplot2)</a></code></pre></div>
+<p>You typically work in a directory during a R session. You can find current working directory or set working directory to a directory of your choice. When setting working directory to the desired location, in Windows use <code>/</code> or <code>\\</code> instead of <code>\</code> character as the separator character.</p>
+<div class="sourceCode" id="cb93"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb93-1" title="1"><span class="kw">getwd</span>()</a></code></pre></div>
+<pre><code>## [1] &quot;C:/Box Sync/2Teaching/ClarifyR&quot;</code></pre>
+<div class="sourceCode" id="cb95"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb95-1" title="1"><span class="co">#setwd(&quot;Enter Directory Addess Here&quot;)</span></a></code></pre></div>
+<p>You usually have a *<strong>home directory</strong> defined for your R installation. When you start R, your R session will usually start in this home directory. Home directory is usually referred using the <code>~</code> character. You can find out the directory assigned the <strong>Home</strong> status using the command <code>path.expand</code>.</p>
+<div class="sourceCode" id="cb96"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb96-1" title="1"><span class="kw">path.expand</span>(<span class="st">&quot;~&quot;</span>)</a></code></pre></div>
+<pre><code>## [1] &quot;//adsroot.itcs.umich.edu/bus/AllFiles/FacStaff/S/sankum&quot;</code></pre>
+<p>First thing - how to get help when you need it. For example: What the hell is a Vector?</p>
+<div class="sourceCode" id="cb98"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb98-1" title="1"><span class="co">#Output supressed for brevity</span></a>
+<a class="sourceLine" id="cb98-2" title="2"><span class="kw">help</span>(<span class="st">&quot;vector&quot;</span>) <span class="co">#default approach, note the quote marks</span></a>
+<a class="sourceLine" id="cb98-3" title="3">?<span class="st">&quot;vector&quot;</span> <span class="co">#or this simple command works too</span></a>
+<a class="sourceLine" id="cb98-4" title="4"><span class="kw">example</span>(<span class="st">&quot;barplot&quot;</span>) <span class="co">#You can also look up examples</span></a></code></pre></div>
+<p>As you work with R, you will create Objects. You can get a list of current objects using the <code>objects</code> command. You can delete objects using the <code>rm</code> command (rm is short for remove). BTW - Check of Environment Tab in RStudio - you can see that R/RStudio is keeping track of your objects and their values</p>
+<div class="sourceCode" id="cb99"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb99-1" title="1"><span class="kw">objects</span>() <span class="co">#Lists all the objects</span></a></code></pre></div>
+<pre><code>##  [1] &quot;day.name&quot;       &quot;grades&quot;         &quot;message&quot;       
+##  [4] &quot;numvalue&quot;       &quot;revenue&quot;        &quot;sleep.per.day&quot; 
+##  [7] &quot;someday&quot;        &quot;wed.hours&quot;      &quot;work.and.sleep&quot;
+## [10] &quot;work.per.day&quot;   &quot;x&quot;              &quot;y&quot;</code></pre>
+<div class="sourceCode" id="cb101"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb101-1" title="1"><span class="co">#Don&#39;t like a cluttered workspace, delete all objects by</span></a>
+<a class="sourceLine" id="cb101-2" title="2"><span class="kw">rm</span>(<span class="dt">list =</span> <span class="kw">ls</span>())  <span class="co">#ls() gives a list of all the objects</span></a></code></pre></div>
+<p>When you are done with your current R session, you can quit using the <code>q</code> command. You should save your current session first though.</p>
+<div class="sourceCode" id="cb102"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb102-1" title="1"><span class="co">#Commands only for demo, not evaluated.</span></a>
+<a class="sourceLine" id="cb102-2" title="2"><span class="kw">save.image</span>(<span class="dt">file =</span> <span class="st">&quot;FileName.RData&quot;</span>)</a>
+<a class="sourceLine" id="cb102-3" title="3"><span class="kw">q</span>()</a></code></pre></div>
+
+
 </div>
+<!-- </div> -->
+
+
+
             </section>
 
           </div>
         </div>
       </div>
-<a href="using-built-in-functions.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="to404-big-data-manipulation-and-visualization.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="factors.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="syllabi.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook/js/app.min.js"></script>

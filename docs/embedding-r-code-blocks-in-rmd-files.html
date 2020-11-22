@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>A Syllabi | Advanced Analytics, Machine Learning and Artificial Intelligence</title>
+  <title>3.6 Embedding R Code Blocks in RMD Files | Advanced Analytics, Machine Learning and Artificial Intelligence</title>
   <meta name="description" content="A book to support AA, ML and AI classes by Sanjeev Kumar at Ross School of Business, Univ of Michigan." />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="A Syllabi | Advanced Analytics, Machine Learning and Artificial Intelligence" />
+  <meta property="og:title" content="3.6 Embedding R Code Blocks in RMD Files | Advanced Analytics, Machine Learning and Artificial Intelligence" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="clarifyr/ClarifyR" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="A Syllabi | Advanced Analytics, Machine Learning and Artificial Intelligence" />
+  <meta name="twitter:title" content="3.6 Embedding R Code Blocks in RMD Files | Advanced Analytics, Machine Learning and Artificial Intelligence" />
   
   <meta name="twitter:description" content="A book to support AA, ML and AI classes by Sanjeev Kumar at Ross School of Business, Univ of Michigan." />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="using-built-in-functions.html"/>
-<link rel="next" href="to404-big-data-manipulation-and-visualization.html"/>
+<link rel="prev" href="rmarkdown-rmd-files.html"/>
+<link rel="next" href="key-features-of-rrstudio-ecosystem.html"/>
 <script src="libs/jquery/jquery.min.js"></script>
 <link href="libs/gitbook/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook/css/plugin-table.css" rel="stylesheet" />
@@ -196,17 +196,37 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="syllabi" class="section level1">
-<h1><span class="header-section-number">A</span> Syllabi</h1>
-<p>This appendix will have the syllabus for the relevant Ross courses.</p>
+<div id="embedding-r-code-blocks-in-rmd-files" class="section level2">
+<h2><span class="header-section-number">3.6</span> Embedding R Code Blocks in RMD Files</h2>
+<div id="embedding-options" class="section level3">
+<h3><span class="header-section-number">3.6.1</span> Embedding Options</h3>
+<ul>
+<li>echo</li>
+<li>eval</li>
+<li>cache</li>
+<li>label</li>
+<li>fig.height/width</li>
+</ul>
+</div>
+<div id="embedding-code-blocks-of-other-languages" class="section level3">
+<h3><span class="header-section-number">3.6.2</span> Embedding Code Blocks of Other Languages</h3>
+</div>
+<div id="embedding-in-line-r-code" class="section level3">
+<h3><span class="header-section-number">3.6.3</span> Embedding in-line R Code</h3>
+</div>
+<div id="reproducibility-of-data-analysis" class="section level3">
+<h3><span class="header-section-number">3.6.4</span> Reproducibility of Data Analysis</h3>
+<p>A key advantage of using an RMD file is that the output contains both the R code and the output. That allows for a precise matching of what steps were performed to reach a specific output. Consider the example of a complex chart made in MS-Excel - you would be hard pressed to figure out what exactly was done to create that chart. Whether the chart has some data manipulation in it, whether the chart inadvertently includes a mistake - there is no transparency - and hence you are likely to not have much trust in the chart. In the case of RMD files on the other hand, the entire process of creating the chart is right there in the form of R commands. Anybody else with the same data and the same commands will reach exactly the same output. Your analysis can be reproduced by anybody else - imporving the reliability and trustworthiness of your analysis.</p>
+<p>We discussed “veracity” as one of the four Vs of Big Data. Doing data analytics in a way that is reproducible (e.g through an RMD file) goes a long way towards establishing confidence in the results of the analysis.</p>
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="using-built-in-functions.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="to404-big-data-manipulation-and-visualization.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="rmarkdown-rmd-files.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="key-features-of-rrstudio-ecosystem.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook/js/app.min.js"></script>

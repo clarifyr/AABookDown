@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>A Syllabi | Advanced Analytics, Machine Learning and Artificial Intelligence</title>
+  <title>3.8 Common Issues, Pitfalls, Bugs, Obstacles and Their Solutions | Advanced Analytics, Machine Learning and Artificial Intelligence</title>
   <meta name="description" content="A book to support AA, ML and AI classes by Sanjeev Kumar at Ross School of Business, Univ of Michigan." />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="A Syllabi | Advanced Analytics, Machine Learning and Artificial Intelligence" />
+  <meta property="og:title" content="3.8 Common Issues, Pitfalls, Bugs, Obstacles and Their Solutions | Advanced Analytics, Machine Learning and Artificial Intelligence" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="clarifyr/ClarifyR" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="A Syllabi | Advanced Analytics, Machine Learning and Artificial Intelligence" />
+  <meta name="twitter:title" content="3.8 Common Issues, Pitfalls, Bugs, Obstacles and Their Solutions | Advanced Analytics, Machine Learning and Artificial Intelligence" />
   
   <meta name="twitter:description" content="A book to support AA, ML and AI classes by Sanjeev Kumar at Ross School of Business, Univ of Michigan." />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="using-built-in-functions.html"/>
-<link rel="next" href="to404-big-data-manipulation-and-visualization.html"/>
+<link rel="prev" href="key-features-of-rrstudio-ecosystem.html"/>
+<link rel="next" href="essential-r-language-elements.html"/>
 <script src="libs/jquery/jquery.min.js"></script>
 <link href="libs/gitbook/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook/css/plugin-table.css" rel="stylesheet" />
@@ -196,17 +196,52 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="syllabi" class="section level1">
-<h1><span class="header-section-number">A</span> Syllabi</h1>
-<p>This appendix will have the syllabus for the relevant Ross courses.</p>
+<div id="common-issues-pitfalls-bugs-obstacles-and-their-solutions" class="section level2">
+<h2><span class="header-section-number">3.8</span> Common Issues, Pitfalls, Bugs, Obstacles and Their Solutions</h2>
+<p>This section is my master list of common issues that students encounter when they start working with R. You may want to not read this in full right now - treat this as a reference section. When you run into an issue, come by here and see if I have a solution for you.</p>
+<div id="i-have-an-older-r-installtion.-how-do-i-upgrade-it" class="section level3">
+<h3><span class="header-section-number">3.8.1</span> I have an older R installtion. How do I upgrade it?</h3>
+<p>You might have an old, not updated version of R in your machine. You can check the current version of your R by running the <code>version</code> command. If you have an older version and if you are in a Windows machine, then upgrading your R installation is easy with the <code>installr</code> package. The <code>installr</code> package has the handy <code>updateR</code> command that will automatically update your R installation to the latest one. A sample code to accomplish this is below:</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb14-1" title="1"><span class="co">#Sample code, not being evaluated here</span></a>
+<a class="sourceLine" id="cb14-2" title="2"><span class="kw">install.packages</span>(<span class="st">&quot;installr&quot;</span>) <span class="co"># install the installr package </span></a>
+<a class="sourceLine" id="cb14-3" title="3"><span class="kw">library</span>(installr)</a>
+<a class="sourceLine" id="cb14-4" title="4"><span class="kw">updateR</span>() <span class="co"># updating your R version</span></a>
+<a class="sourceLine" id="cb14-5" title="5">version <span class="co"># command for checking your current R version</span></a></code></pre></div>
+<p>If you happen to be in a Mac or Linux machine, then you would want to download the current version of R and install. This process is similar to installing a fresh new installation of R as discussion in a previous section.</p>
+</div>
+<div id="help---i-am-not-being-able-to-install-any-packages" class="section level3">
+<h3><span class="header-section-number">3.8.2</span> Help - I am not being able to install any packages!</h3>
+<p>If you are unable to install R packages, there are a few things we can try.<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a> First thing to check would be your anti-virus software. Several anti-virus software balk at allowing R to perform tasks that may be interpreted as a security risk (for example - downloading and installing packages from the Internet). You can try to work around this by disabling/uninstalling your anti-virus or adding R to the exceptions list in the anti-virus.</p>
+<p>You may also want to check whether you have administrator access in the machine you are working on. Several essential tasks in R require the user to have administrator access.</p>
+<p>Lastly, R may be attempting to install packages into a directory that it does not have write permissions on. This can sometimes happen if you are on a computer on a network with mapped drives. You can work around this problem by asking R to install your packages in a safe, editable directory where you have write access. R installs all packages in a library directory - you can find out the current location of the library directory with the <code>.libPaths</code> command. You can use the <code>.libPaths</code> command to then add a directory location as your personal library location so that R can then install packages in that directory. A sample code to accomplish this is shown below:<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a></p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb15-1" title="1"><span class="kw">.libPaths</span>() <span class="co">#Shows the current library path</span></a></code></pre></div>
+<pre><code>## [1] &quot;C:/RHome&quot;                                                                   
+## [2] &quot;C:/Program Files/R/R-3.6.1/library&quot;                                         
+## [3] &quot;\\\\adsroot.itcs.umich.edu/bus/AllFiles/FacStaff/S/sankum/R/win-library/3.6&quot;</code></pre>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb17-1" title="1"><span class="co"># You can add your own library folder to the path</span></a>
+<a class="sourceLine" id="cb17-2" title="2"><span class="co">#libPaths( c( .libPaths(), &quot;C:/Whatever/Whatever...&quot;) )</span></a></code></pre></div>
+</div>
+<div id="why-is-the-edit-command-not-working-for-me" class="section level3">
+<h3><span class="header-section-number">3.8.3</span> Why is the edit command not working for me?</h3>
+<p>One of the first R commands that gives trouble is the <code>edit</code> command. As the name suggests, <code>edit</code> is used for editing data - typically it shows the data to be edited in a table format with editable cells. This specific command (and its cousin, the <code>fix</code> command) seems to be very sensitive to the keyboard layouts, especially on Apple machines. This problem is hardware oriented and may prove difficult to solve. I usually recommend to ignore these two commands and take care of your data editing needs using alternative methods. If you were using <code>edit</code> for only viewing the data, then <code>View</code> is a good alternative for that.</p>
+
+</div>
+</div>
+<!-- </div> -->
+<div class="footnotes">
+<hr />
+<ol start="2">
+<li id="fn2"><p>I am not going to insult your intelligence by asking you to make sure that you have a live Internet connection!<a href="common-issues-pitfalls-bugs-obstacles-and-their-solutions.html#fnref2" class="footnote-back">↩</a></p></li>
+<li id="fn3"><p>Last command commented as C:/Whatever does not exist obviously - so would have resulted in an error - hence it is commented out.<a href="common-issues-pitfalls-bugs-obstacles-and-their-solutions.html#fnref3" class="footnote-back">↩</a></p></li>
+</ol>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="using-built-in-functions.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="to404-big-data-manipulation-and-visualization.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="key-features-of-rrstudio-ecosystem.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="essential-r-language-elements.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook/js/app.min.js"></script>

@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>A Syllabi | Advanced Analytics, Machine Learning and Artificial Intelligence</title>
+  <title>3.4 Essential R Tips and Tricks | Advanced Analytics, Machine Learning and Artificial Intelligence</title>
   <meta name="description" content="A book to support AA, ML and AI classes by Sanjeev Kumar at Ross School of Business, Univ of Michigan." />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="A Syllabi | Advanced Analytics, Machine Learning and Artificial Intelligence" />
+  <meta property="og:title" content="3.4 Essential R Tips and Tricks | Advanced Analytics, Machine Learning and Artificial Intelligence" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="clarifyr/ClarifyR" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="A Syllabi | Advanced Analytics, Machine Learning and Artificial Intelligence" />
+  <meta name="twitter:title" content="3.4 Essential R Tips and Tricks | Advanced Analytics, Machine Learning and Artificial Intelligence" />
   
   <meta name="twitter:description" content="A book to support AA, ML and AI classes by Sanjeev Kumar at Ross School of Business, Univ of Michigan." />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="using-built-in-functions.html"/>
-<link rel="next" href="to404-big-data-manipulation-and-visualization.html"/>
+<link rel="prev" href="helpful-menu-items-and-keyboard-shortcuts.html"/>
+<link rel="next" href="rmarkdown-rmd-files.html"/>
 <script src="libs/jquery/jquery.min.js"></script>
 <link href="libs/gitbook/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook/css/plugin-table.css" rel="stylesheet" />
@@ -196,17 +196,35 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="syllabi" class="section level1">
-<h1><span class="header-section-number">A</span> Syllabi</h1>
-<p>This appendix will have the syllabus for the relevant Ross courses.</p>
+<div id="essential-r-tips-and-tricks" class="section level2">
+<h2><span class="header-section-number">3.4</span> Essential R Tips and Tricks</h2>
+<div id="r-is-case-specific-and-space-neutral" class="section level3">
+<h3><span class="header-section-number">3.4.1</span> R is Case Specific and Space Neutral</h3>
+<p>Everything in R is case specific. In R, upper case letters are considered completely different than their lower case counterparts. R will show no mercy if you mistype something in a difference case. However, R is pretty flexible about spaces and will usually accept multiple (or none) spaces where the default expectation is one space.</p>
+</div>
+<div id="comments-and-line-continuation" class="section level3">
+<h3><span class="header-section-number">3.4.2</span> Comments and Line Continuation</h3>
+<p>You can add your comments/remarks in your R code by inserting the <code>#</code> character. Any text after the <code>#</code> character will be ignored by R during execution. It is essential that sufficient comments are added to your R code so that the code remains understandable and if you share your code with somebody else then they have a way of figuring out what you are trying to do, why and how.</p>
+<p>R is smart enough to figure when the command is not finished and allows you to continue typing on the next line. This usually works well when there are un-finished parentheses or operators at the end. R indicates that it is expecting further inputs by showing the character <code>+</code> at the beginning of the next line. See figure for an example.</p>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-10"></span>
+<img src="images/incomplete.png" alt="Line Continuation for Incomplete Commands" width="50%" />
+<p class="caption">
+FIGURE 3.5: Line Continuation for Incomplete Commands
+</p>
+</div>
+</div>
+<div id="naming-conventions" class="section level3">
+<h3><span class="header-section-number">3.4.3</span> Naming Conventions</h3>
+<p>Object names in R can consist of any combination of alphanumeric characters (<code>a-z</code>, <code>A-Z</code>}, <code>0-9</code>) as well as underscore <code>-</code> and <code>.</code> characters. Object names should not include special characters such as <code>?</code> or space. Object names must start with a letter or a period. Special care should be taken to not include one of the reserved keywords (like <code>function</code> or <code>help</code>) as object names.</p>
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="using-built-in-functions.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="to404-big-data-manipulation-and-visualization.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="helpful-menu-items-and-keyboard-shortcuts.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="rmarkdown-rmd-files.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook/js/app.min.js"></script>

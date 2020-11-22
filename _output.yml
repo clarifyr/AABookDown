@@ -1,16 +1,19 @@
 bookdown::gitbook:
   toc_depth: 2
+  split_by: section
   css: css/style.css
   config:
     toc_depth: 2
     toc:
       collapse: none
+      scroll_highlight: yes
       before: |
-        <li><a href="./index.html">Advanced Big Data Analytics</a></li>
+        <li><a href="https://aamlai.com">Sanjeev Kumar</a></li>
+        <li><a href="./index.html">Advanced Analytics, Machine Learning, Artificial Intelligence</a></li>
       after: |
         <li><a href="https://bookdown.org" target="blank">Published with bookdown</a></li>
     download: [pdf]
-    edit: https://github.com/clarifyR/AABookDown/edit/master/%s
+    #edit: https://github.com/clarifyR/AABookDown/edit/master/%s
     sharing:
       github: true
       facebook: false
@@ -32,3 +35,4 @@ bookdown::pdf_book:
   highlight_bw: true
 bookdown::epub_book:
   stylesheet: css/style.css
+

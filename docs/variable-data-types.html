@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>A Syllabi | Advanced Analytics, Machine Learning and Artificial Intelligence</title>
+  <title>4.4 Variable Data Types | Advanced Analytics, Machine Learning and Artificial Intelligence</title>
   <meta name="description" content="A book to support AA, ML and AI classes by Sanjeev Kumar at Ross School of Business, Univ of Michigan." />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="A Syllabi | Advanced Analytics, Machine Learning and Artificial Intelligence" />
+  <meta property="og:title" content="4.4 Variable Data Types | Advanced Analytics, Machine Learning and Artificial Intelligence" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="clarifyr/ClarifyR" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="A Syllabi | Advanced Analytics, Machine Learning and Artificial Intelligence" />
+  <meta name="twitter:title" content="4.4 Variable Data Types | Advanced Analytics, Machine Learning and Artificial Intelligence" />
   
   <meta name="twitter:description" content="A book to support AA, ML and AI classes by Sanjeev Kumar at Ross School of Business, Univ of Michigan." />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="using-built-in-functions.html"/>
-<link rel="next" href="to404-big-data-manipulation-and-visualization.html"/>
+<link rel="prev" href="variables.html"/>
+<link rel="next" href="logical-data.html"/>
 <script src="libs/jquery/jquery.min.js"></script>
 <link href="libs/gitbook/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook/css/plugin-table.css" rel="stylesheet" />
@@ -196,17 +196,42 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="syllabi" class="section level1">
-<h1><span class="header-section-number">A</span> Syllabi</h1>
-<p>This appendix will have the syllabus for the relevant Ross courses.</p>
+<div id="variable-data-types" class="section level2">
+<h2><span class="header-section-number">4.4</span> Variable Data Types</h2>
+<p>Variables can store different types of data. We saw integer numerical data in the examples above. Other common data types include floating point numbers (fractional numbers), characters data (i.e. a single character), text data (called strings - as in string of characters) and logical data (true or false). We can find the data type of a variable by using the <code>class</code> command.</p>
+<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb52-1" title="1">numvalue &lt;-<span class="st"> </span><span class="fl">20.56</span> <span class="co">#Creating a numeric variable</span></a>
+<a class="sourceLine" id="cb52-2" title="2"><span class="kw">class</span>(numvalue) <span class="co">#Finding data type of numvalue variable</span></a></code></pre></div>
+<pre><code>## [1] &quot;numeric&quot;</code></pre>
+<div id="numeric-data" class="section level3">
+<h3><span class="header-section-number">4.4.1</span> Numeric Data</h3>
+<p>Variables of numeric data type can store both integers and floating point values. Unlike many programming languages, R does not have various different kinds of integers and floating point numbers defined to optimize memory usage.</p>
+</div>
+<div id="string-data" class="section level3">
+<h3><span class="header-section-number">4.4.2</span> String Data</h3>
+<p><strong>String</strong> or text data<a href="#fn6" class="footnote-ref" id="fnref6"><sup>6</sup></a> is written within quote marks <code>" "</code> to differentiate them from text that represent things like object names. An empty string (a text data with no characters) is usually represented by two quote marks with nothing within - like <code>""</code>.</p>
+<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb54-1" title="1">day.name &lt;-<span class="st"> &quot;Sunday&quot;</span> <span class="co">#Assigns the string Sunday to variable day.name</span></a>
+<a class="sourceLine" id="cb54-2" title="2">someday &lt;-<span class="st"> &quot;&quot;</span> <span class="co">#Empty string assigned to variable someday</span></a></code></pre></div>
+<p>String is a very useful data type as all other types of data can be saved as a string. For example - we can save numeric data (“23.37”), date data (“12/27/1976”), logical data (“TRUE”) etc. all as string. R has several useful commands for working with string data. You can connect two strings together using the <strong>String Concatenation</strong> function <strong><code>paste</code></strong>. You can calculate the number of characters in a string using the <strong><code>nchar</code></strong> function. Many other strings related commands are discussed later in this book.</p>
+<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb55-1" title="1"><span class="kw">nchar</span>(day.name); <span class="kw">nchar</span>(someday)</a></code></pre></div>
+<pre><code>## [1] 6</code></pre>
+<pre><code>## [1] 0</code></pre>
+<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb58-1" title="1">message &lt;-<span class="st"> </span><span class="kw">paste</span>(day.name, <span class="st">&quot; is a great day!&quot;</span>); message</a></code></pre></div>
+<pre><code>## [1] &quot;Sunday  is a great day!&quot;</code></pre>
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="6">
+<li id="fn6"><p>Text is nothing but a string of characters, hence the name String<a href="variable-data-types.html#fnref6" class="footnote-back">↩</a></p></li>
+</ol>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="using-built-in-functions.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="to404-big-data-manipulation-and-visualization.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="variables.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="logical-data.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook/js/app.min.js"></script>

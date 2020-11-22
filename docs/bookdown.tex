@@ -37,7 +37,7 @@
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
 \IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
 \hypersetup{
-  pdftitle={Advanced Big Data Analytics for Business with R},
+  pdftitle={Advanced Analytics, Machine Learning and Artificial Intelligence},
   pdfauthor={Sanjeev Kumar},
   colorlinks=true,
   linkcolor=Maroon,
@@ -176,9 +176,16 @@
 \usepackage[]{natbib}
 \bibliographystyle{apalike}
 
-\title{Advanced Big Data Analytics for Business with R}
+\title{Advanced Analytics, Machine Learning and Artificial Intelligence}
+\usepackage{etoolbox}
+\makeatletter
+\providecommand{\subtitle}[1]{% add subtitle to \maketitle
+  \apptocmd{\@title}{\par {\large #1 \par}}{}{}
+}
+\makeatother
+\subtitle{Teaching Material for Classes at Ross School of Business by Sanjeev Kumar}
 \author{Sanjeev Kumar}
-\date{2020-11-21}
+\date{21 November 2020}
 
 \begin{document}
 \maketitle

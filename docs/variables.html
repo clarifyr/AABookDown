@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>A Syllabi | Advanced Analytics, Machine Learning and Artificial Intelligence</title>
+  <title>4.3 Variables | Advanced Analytics, Machine Learning and Artificial Intelligence</title>
   <meta name="description" content="A book to support AA, ML and AI classes by Sanjeev Kumar at Ross School of Business, Univ of Michigan." />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="A Syllabi | Advanced Analytics, Machine Learning and Artificial Intelligence" />
+  <meta property="og:title" content="4.3 Variables | Advanced Analytics, Machine Learning and Artificial Intelligence" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="clarifyr/ClarifyR" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="A Syllabi | Advanced Analytics, Machine Learning and Artificial Intelligence" />
+  <meta name="twitter:title" content="4.3 Variables | Advanced Analytics, Machine Learning and Artificial Intelligence" />
   
   <meta name="twitter:description" content="A book to support AA, ML and AI classes by Sanjeev Kumar at Ross School of Business, Univ of Michigan." />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="using-built-in-functions.html"/>
-<link rel="next" href="to404-big-data-manipulation-and-visualization.html"/>
+<link rel="prev" href="logical-operators.html"/>
+<link rel="next" href="variable-data-types.html"/>
 <script src="libs/jquery/jquery.min.js"></script>
 <link href="libs/gitbook/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook/css/plugin-table.css" rel="stylesheet" />
@@ -196,17 +196,32 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="syllabi" class="section level1">
-<h1><span class="header-section-number">A</span> Syllabi</h1>
-<p>This appendix will have the syllabus for the relevant Ross courses.</p>
+<div id="variables" class="section level2">
+<h2><span class="header-section-number">4.3</span> Variables</h2>
+<p>R keeps all data in <strong>Variables</strong>. Variables can be thought of as a space in computer’s memory where R can store data. Once we have created a variable, we can then use the variable name to access, manipulate and work with the data kept in the variable. Variables are created using the <strong>Assignment Operator</strong> written as <code>&lt;-</code>. The arrow indicates the direction of assignment. Operators also exist to do assignment in the opposite direction <code>-&gt;</code> and do the same operation as assignment operator. R also supports the assignment operator command used by many other programming languages <code>=</code>, but it is customary to use the right-to-left version of assignment operator.<a href="#fn5" class="footnote-ref" id="fnref5"><sup>5</sup></a></p>
+<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb50-1" title="1">revenue &lt;-<span class="st"> </span><span class="dv">100</span> <span class="co">#Typical way of creating a variable and assigning value</span></a>
+<a class="sourceLine" id="cb50-2" title="2"><span class="co"># Above is the recommended approach</span></a>
+<a class="sourceLine" id="cb50-3" title="3">revenue =<span class="st"> </span><span class="dv">100</span> <span class="co">#Alternate way of doing same as above</span></a>
+<a class="sourceLine" id="cb50-4" title="4"><span class="co">#100 -&gt; revenue #Reverse direction assignment</span></a>
+<a class="sourceLine" id="cb50-5" title="5">revenue &lt;-<span class="st"> </span>revenue <span class="op">+</span><span class="st"> </span><span class="dv">300</span> <span class="co">#Performing calculations</span></a>
+<a class="sourceLine" id="cb50-6" title="6"><span class="kw">print</span>(revenue) <span class="co">#Printing/showing the value inside the variable</span></a></code></pre></div>
+<pre><code>## [1] 400</code></pre>
+<p>The first three line of the code above should be read as the value 100 is assigned to the variable <code>revenue</code>. In the fourth line, we add 300 to the current value of variable <code>revenue</code> and the resulting value (in this case 400) is then assigned to the variable <code>revenue</code>. So the value in the variable <code>revenue</code> is now 400, which is shown as output in the last line.</p>
+<p>A numeric variable like <code>revenue</code> above can be used just like a number to perform all usual arithmetic operations.</p>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="5">
+<li id="fn5"><p>I find the R version of assignment operator to be much more intuitive as the direction of value assignment is clearly specified. The <code>=</code> charater usually confuses beginners into thinking that we are “equating” values instead of the correct interpretation of “assigning” value from one side to the other.<a href="variables.html#fnref5" class="footnote-back">↩</a></p></li>
+</ol>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="using-built-in-functions.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="to404-big-data-manipulation-and-visualization.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="logical-operators.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="variable-data-types.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook/js/app.min.js"></script>

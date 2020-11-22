@@ -1,7 +1,8 @@
 --- 
-title: "Advanced Big Data Analytics for Business with R"
+title: "Advanced Analytics, Machine Learning and Artificial Intelligence"
+subtitle: "Teaching Material for Classes at Ross School of Business by Sanjeev Kumar"
 author: "Sanjeev Kumar"
-date: "`r Sys.Date()`"
+date: "`r format(Sys.Date(), '%d %B %Y')`"
 output:
   html_document:
     df_print: paged
@@ -10,8 +11,7 @@ output:
 bibliography:
 - book.bib
 - packages.bib
-description: A book to support Big Data Analytics classes by Sanjeev Kumar at Ross School of
-  Business, Univ of Michigan.
+description: A book to support AA, ML and AI classes by Sanjeev Kumar at Ross School of Business, Univ of Michigan.
 documentclass: krantz
 github-repo: clarifyr/ClarifyR
 graphics: yes
