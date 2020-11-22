@@ -10,10 +10,10 @@ output:
 bibliography:
 - book.bib
 - packages.bib
-description: A book to support Big Data classes by Sanjeev Kumar at Ross School of
+description: A book to support Big Data Analytics classes by Sanjeev Kumar at Ross School of
   Business, Univ of Michigan.
 documentclass: krantz
-github-repo: ateachr/ABDA4BwR
+github-repo: clarifyr/ClarifyR
 graphics: yes
 link-citations: yes
 lof: yes
